@@ -361,10 +361,10 @@
     height: 214px;
 }
 
-.appkysk-child3,
-.appkysk-child4,
-.appkysk-child5,
-.appkysk-child6 {
+.appkyskChild3,
+.appkyskChild4,
+.appkyskChild5,
+.appkyskChild6 {
     position: absolute;
     top: 747px;
     left: 140px;
@@ -375,25 +375,25 @@
     z-index: -100;
 }
 
-.appkysk-child4,
-.appkysk-child5,
-.appkysk-child6 {
+.appkyskChild4,
+.appkyskChild5,
+.appkyskChild6 {
     top: 160px;
     left: 178px;
 }
 
-.appkysk-child5,
-.appkysk-child6 {
+.appkyskChild5,
+.appkyskChild6 {
     top: 323px;
     left: 657px;
 }
 
-.appkysk-child6 {
+.appkyskChild6 {
     top: 747px;
     left: 837px;
 }
 
-.appkysk-child7,
+.appkyskChild7,
 .icon,
 .icon1,
 .icon2,
@@ -405,7 +405,7 @@
     height: 16px;
 }
 
-.appkysk-child7,
+.appkyskChild7,
 .icon1,
 .icon2,
 .icon3 {
@@ -413,20 +413,20 @@
     left: 691px;
 }
 
-.appkysk-child7,
+.appkyskChild7,
 .icon2,
 .icon3 {
     top: 152px;
     left: 882px;
 }
 
-.appkysk-child7,
+.appkyskChild7,
 .icon3 {
     top: 708px;
     left: 1225px;
 }
 
-.appkysk-child7 {
+.appkyskChild7 {
     top: 3342px;
     left: 1166px;
     border-radius: 50%;
@@ -462,7 +462,7 @@
     width: 119.47px;
 }
 
-.kontaktujte-ns {
+.kontaktujteNas {
     line-height: 140%;
     color: #FFFFFF
 }
@@ -1561,14 +1561,14 @@
     color: var(--color-white);
 }
 
-.top-nav-bar-child {
+.topnavbarchild {
     position: relative;
     height: 100%;
     max-width: 2300px;
     top: 0;
 }
 
-.frame-icon5 {
+.frameIcon5 {
     position: absolute;
     top: 26px;
     right: 6.25%;
@@ -1585,7 +1585,7 @@
 
 }
 
-.frame-1-11 {
+.frameFirst {
     position: absolute;
     top: 37%;
 
@@ -1624,7 +1624,7 @@
     font-family: var(--font-inter);
 }
 
-.top-nav-bar {
+.topnavbar {
     position: sticky;
     top: 0;
     width: 100%;

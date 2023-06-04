@@ -4,27 +4,27 @@ import globalStyles from './global.module.css';
 
 function mainPage() {
     return (
-        <div className="appkysk">
-            <div className="top-nav-bar">
-                <div className="top-nav-bar-child">
-                    <img className="frame-icon5"  src="./public/frame5.svg" id="frameIcon5" />
-                    <b className="appky1">Appky</b>
-                    <img className="frame-1-11"  src="./public/frame-1-1@2x.png" />
-                    <button id="buttonko" className="button2">
-                        <b className="kontaktujte-ns">Kontaktuje nás</b>
+        <div className={styles.appkysk}>
+            <div className={styles.topnavbar}>
+                <div className={styles.topnavbarchild}>
+                    <img className={styles.frameIcon5} alt="" src="./public/frame5.svg" id="frameIcon5" />
+                    <b className={styles.appky1}>Appky</b>
+                    <img className={styles.frameFirst}  alt="" src="./public/frame-1-1@2x.png" />
+                    <button id="buttonko" className={styles.button2}>
+                        <b className={styles.kontaktujteNas}>Kontaktuje nás</b>
                     </button>
                 </div>
             </div>
-            <div className="headerClass">
-                <div className="appkysk-child4" />
-                <div className="appkysk-child3" />
-                <div className="appkysk-child5" />
-                <div className="appkysk-child6" />
-                <img className="icon"  src="./public/plus.svg" />
-                <img className="icon1"  src="./public/plus.svg" />
-                <img className="icon2"  src="./public/plus.svg" />
-                <img className="icon3"  src="./public/plus.svg" />
-                <img className="responsive-design-5402848-1-icon"  style={{float: 'right'}} src="./public/responsivedesign5402848-1@2x.png" />
+            <div className={styles.headerClass}>
+                <div className={styles.appkyskChild4} />
+                <div className={styles.appkyskChild3} />
+                <div className={styles.appkyskChild5} />
+                <div className={styles.appkyskChild6} />
+                <img className={styles.icon}  alt="" src="./public/plus.svg" />
+                <img className={styles.icon1}  alt="" src="./public/plus.svg" />
+                <img className={styles.icon2}  alt="" src="./public/plus.svg" />
+                <img className={styles.icon3}  alt="" src="./public/plus.svg" />
+                <img className="responsive-design-5402848-1-icon"  alt="" style={{float: 'right'}} src="./public/responsivedesign5402848-1@2x.png" />
                 <div className="rectangle-parent">
                     <div className="group-child" />
                     <div className="group-item" />
@@ -57,7 +57,7 @@ function mainPage() {
                                 <p className="po-spolonej-kve">aplikácie</p>
                             </div>
                             <div className="mobilne-app-child" />
-                            <img className="mobilne-app-item"  src="./public/group-57.svg" />
+                            <img className="mobilne-app-item"  alt="" src="./public/group-57.svg" />
                         </div>
                         <div className="webove-apps">
                             <div className="mobiln-aplikcie">
@@ -65,7 +65,7 @@ function mainPage() {
                                 <p className="po-spolonej-kve">aplikácie</p>
                             </div>
                             <div className="mobilne-app-child" />
-                            <img className="mobilne-app-item" src="./public/group3.svg" />
+                            <img className="mobilne-app-item"  alt="" src="./public/group3.svg" />
                         </div>
                     </div>
                     <div style={{display: 'flex', flexDirection: 'row'}}>
@@ -75,7 +75,7 @@ function mainPage() {
                                 <p className="po-spolonej-kve">pre tvoju firmu</p>
                             </div>
                             <div className="mobilne-app-child" />
-                            <img className="mobilne-app-item"  src="./public/group4.svg" />
+                            <img className="mobilne-app-item"  alt="" src="./public/group4.svg" />
                         </div>
                         <div className="uiux-apps">
                             <div className="mobiln-aplikcie">
@@ -83,14 +83,14 @@ function mainPage() {
                                 <p className="po-spolonej-kve">Dizajn</p>
                             </div>
                             <div className="mobilne-app-child" />
-                            <img className="mobilne-app-item"  src="./public/24vector-graphic.svg" />
+                            <img className="mobilne-app-item"  alt="" src="./public/24vector-graphic.svg" />
                         </div>
                     </div>
                 </div>
             </div>
             <div className="sectionKnowHow">
                 <div className="content-container">
-                    <img className="rectangle-icon"  style={{float: 'left'}} src="./public/rectangle-6@2x.png" />
+                    <img className="rectangle-icon"  alt="" style={{float: 'left'}} src="./public/rectangle-6@2x.png" />
                     <div>
                         <div className="ako-to-robme">Ako to robíme my?</div>
                         <div className="naa-firma-sa">
@@ -99,7 +99,7 @@ function mainPage() {
                             pričom si môžeme vychutnať šálku kávy.
                             <div className="content-kava">
                                 <div className="coffee-child">
-                                    <img className="coffee-icon"  src="./public/vector.svg" />
+                                    <img className="coffee-icon"  alt="" src="./public/vector.svg" />
                                 </div>
                                 <div className="kava-container">
                                     <div className="kava">Káva</div>
@@ -112,7 +112,7 @@ function mainPage() {
                             </div>
                             <div className="content-plan">
                                 <div className="plan-child">
-                                    <img className="plan-icon"  src="./public/group.svg" />
+                                    <img className="plan-icon"  alt="" src="./public/group.svg" />
                                 </div>
                                 <div className="kava-container">
                                     <div className="kava">Plán</div>
@@ -125,7 +125,7 @@ function mainPage() {
                             </div>
                             <div className="content-designcode">
                                 <div className="designcode-child">
-                                    <img className="designcode-icon"  src="./public/group1.svg" />
+                                    <img className="designcode-icon"  alt="" src="./public/group1.svg" />
                                 </div>
                                 <div className="kava-container">
                                     <div className="kava">Dizajn a vývoj</div>
@@ -140,7 +140,7 @@ function mainPage() {
                             </div>
                             <div className="content-delivery">
                                 <div className="delivery-child">
-                                    <img className="delivery-icon"  src="./public/group2.svg" />
+                                    <img className="delivery-icon"  alt="" src="./public/group2.svg" />
                                 </div>
                                 <div className="kava-container">
                                     <div className="kava">Doručenie</div>
@@ -191,10 +191,10 @@ function mainPage() {
                         <div className="helloappkysk">hello@appky.sk</div>
                         <div className="appkysk1">appky.sk</div>
                         <div className="do-lebn-3">Do žlebín 3, Ružomberok</div>
-                        <img className="frame-icon2"  src="./public/frame2.svg" />
-                        <img className="group-icon6"  src="./public/group5.svg" />
-                        <img className="frame-icon3"  src="./public/frame3.svg" />
-                        <img className="frame-icon4"  src="./public/frame4.svg" />
+                        <img className="frame-icon2"  alt="" src="./public/frame2.svg" />
+                        <img className="group-icon6"  alt="" src="./public/group5.svg" />
+                        <img className="frame-icon3"  alt="" src="./public/frame3.svg" />
+                        <img className="frame-icon4"  alt="" src="./public/frame4.svg" />
                     </div>
                     <div className="formular">
                         <form id="emailForm">
@@ -270,28 +270,28 @@ function mainPage() {
                         <b className="kontaktujte-ns">Napíš nám</b>
                     </div>
                 </div>
-                <img className="unsplashsbfmokbk7ju-icon"  src="./public/unsplashsbfmokbk7ju@2x.png" />
+                <img className="unsplashsbfmokbk7ju-icon"  alt="" src="./public/unsplashsbfmokbk7ju@2x.png" />
             </div>
             <div className="footer">
-                <img className="frame-1-1"  src="./public/frame-1-1@2x.png" />
+                <img className="frame-1-1"  alt="" src="./public/frame-1-1@2x.png" />
                 <b className="appky">Appky</b>
                 <div className="appky-sro-2023">Appky s.r.o 2023</div>
                 <div className="terms-conditions">Terms &amp; Conditions</div>
                 <div className="privacy">Privacy</div>
                 <div className="footer-child">
-                    <img className="instagram-icon"  src="./public/instagram-icon.svg" />
+                    <img className="instagram-icon"  alt="" src="./public/instagram-icon.svg" />
                 </div>
                 <div className="footer-item">
-                    <img className="facebook-icon"  src="./public/facebook-icon.svg" />
+                    <img className="facebook-icon"  alt="" src="./public/facebook-icon.svg" />
                 </div>
                 <div className="footer-inner">
-                    <img className="linkedin-icon"  src="./public/linkedin-icon.svg" />
+                    <img className="linkedin-icon"  alt="" src="./public/linkedin-icon.svg" />
                 </div>
                 <div className="footer-child1">
-                    <img className="twitter-icon"  src="./public/twitter-icon.svg" />
+                    <img className="twitter-icon"  alt="" src="./public/twitter-icon.svg" />
                 </div>
                 <div className="footer-child2">
-                    <img className="youtube-icon"  src="./public/youtube-icon.svg" />
+                    <img className="youtube-icon"  alt="" src="./public/youtube-icon.svg" />
                 </div>
             </div>
             --&gt;
