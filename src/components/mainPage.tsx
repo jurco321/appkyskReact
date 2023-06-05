@@ -1,14 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './mainPage.module.css';
 
-function mainPage() {
+function MainPage() {
+
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 0;
+            setScrolled(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
     return (
         <div className={styles.body}>
-            <div className={styles.headerSvg}/>
-            <div className={styles.headerSvg2}/>
-            <div className={styles.topNavBarParent}>
+            <link
+                rel="preconnect"
+                href="https://fonts.googleapis.com"
+            />
+            <link
+                rel="preconnect"
+                href="https://fonts.gstatic.com"
+                crossOrigin=""
+            />
+            <link
+                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+                rel="stylesheet"
+            />
+
+            <div className={styles.headerSvg} />
+            <div className={styles.headerSvg2} />
+            <div className={styles.topNavBarParent + (scrolled ? ' ' + styles.scrolled : '')}>
                 <div className={styles.topNavBar}>
-                    <img src="./assets/appkyLogo.png" alt="Logo" className={styles.appkyLogo}/>
+                    <img src='/public/appkyLogo.png' alt="Logo" className={styles.appkyLogo} />
                     <b className={styles.navBarTitle}>Appky</b>
                     <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>Služby</a>
                     <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>O nás</a>
@@ -27,21 +57,21 @@ function mainPage() {
                         svetovej úrovne.
                     </p>
                     <div className={styles.headerGifSmaller}>
-                        <img src="./assets/appDesignAndDevelopment.gif" alt="Animation"
-                             className={styles.headerGifImgSmaller}/>
+                        <img src='/public/appDesignAndDevelopment.gif' alt="Animation"
+                            className={styles.headerGifImgSmaller} />
                     </div>
                     <button className={styles.headerButton}>Kontaktujte nás</button>
                 </div>
                 <div className={styles.headerGif}>
-                    <img src="./assets/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg}/>
+                    <img src="/public/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg} />
                 </div>
             </div>
             <div className={styles.sluzby}>
                 <h1 className={styles.sluzbyTitle}>Naše služby</h1>
-                <img className={styles.underLine} src="./assets/underLine.svg" alt="Underline"/>
+                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
                 <div className={styles.sluzbyContainer}>
                     <div className={styles.mobilneApps}>
-                        <img src="./assets/mobilneApps.svg" className={styles.beruska}/>
+                        <img src="/public/mobilneApps.svg" className={styles.beruska} />
                         <h2 className={styles.mobilneAppsTitle}>Vývoj
                             mobilných aplikácií
                         </h2>
@@ -55,7 +85,7 @@ function mainPage() {
                         </a>
                     </div>
                     <div className={styles.weboveApps}>
-                        <img src="./assets/weboveApps.svg" className={styles.beruska}/>
+                        <img src="/public/weboveApps.svg" className={styles.beruska} />
                         <h2 className={styles.weboveAppsTitle}>Vývoj
                             webových aplikácií
                         </h2>
@@ -69,7 +99,7 @@ function mainPage() {
                         </a>
                     </div>
                     <div className={styles.uiuxApps}>
-                        <img src="./assets/uiuxApps.svg" className={styles.beruska}/>
+                        <img src="public/uiuxApps.svg" className={styles.beruska} />
                         <h2 className={styles.uiuxAppsTitle}>UI / UX Dizajn</h2>
                         <p className={styles.uiuxAppsSubTitle}>
                             S veľkou vášňou sa venujeme tvorbe nádherných a praktických používateľských rozhraní, ktoré
@@ -82,9 +112,9 @@ function mainPage() {
                 </div>
             </div>
             <div className={styles.oNas}>
-                <div className={styles.oNasBg2}/>
+                <div className={styles.oNasBg2} />
                 <div className={styles.iconEllipseContainer}>
-                    <img src="./assets/iconEllipse.svg" alt="IconEllipse" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconEllipse.svg" alt="IconEllipse" className={styles.iconBrandsLogo} />
                 </div>
                 <h2 className={styles.oNasTitle}>
                     Prečo si na vytváranie krásnych aplikácií vybrať Appky?
@@ -106,4 +136,4 @@ function mainPage() {
     );
 }
 
-export default mainPage;
+export default MainPage;
