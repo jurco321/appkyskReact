@@ -5,8 +5,6 @@
     justify-content: center;
     height: 100%;
     margin: 0;
-    padding-left: 30px;
-    padding-right: 30px;
 
 }
 
@@ -591,7 +589,13 @@
     max-width: 1140px;
     align-items: center;
     margin-top: 100px;
-    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .postupTitle {
@@ -603,4 +607,102 @@
     color: #001331;
     margin-bottom: 20px;
     max-width: 315px;
+}
+
+.postup2Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    width: 100%;
+}
+
+.postup2Rectangle {
+    max-width: 366px;
+    height: 322px;
+    background-color: #F5F5F5;
+    box-shadow: 6px 6px 10px -4px rgba(134, 134, 134, 0.15);
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 24px;
+}
+
+.postup2SubTitle {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 32px;
+    color: #001739;
+    max-width: 327px;
+    text-align: left;
+    margin: 0;
+    margin-top: 7px;
+}
+
+.postup1Container {
+    display: flex;
+    flex-direction: row;
+    align-self: flex-start;
+    margin-top: 90px;
+    width: 100%;
+}
+
+.postup1Rectangle {
+    max-width: 366px;
+    height: 322px;
+    background-color: #F5F5F5;
+    box-shadow: 6px 6px 10px -4px rgba(134, 134, 134, 0.15);
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 24px;
+}
+
+.postup1SubTitle {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 32px;
+    color: #001739;
+    max-width: 327px;
+    text-align: left;
+    margin: 0;
+    margin-top: 7px;
+}
+
+.postup3Container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 90px;
+    width: 100%;
+}
+
+.postup3Rectangle {
+    max-width: 366px;
+    height: 322px;
+    background-color: #F5F5F5;
+    box-shadow: 6px 6px 10px -4px rgba(134, 134, 134, 0.15);
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 24px;
+}
+
+.postup3SubTitle {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 32px;
+    color: #001739;
+    max-width: 327px;
+    text-align: left;
+    margin: 0;
+    margin-top: 7px;
 }

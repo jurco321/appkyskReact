@@ -29,10 +29,7 @@ function MainPage() {
                 href="https://fonts.gstatic.com"
                 crossOrigin=""
             />
-            <link
-                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
-                rel="stylesheet"
-            />
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
 
             <div className={styles.headerSvg} />
             <div className={styles.headerSvg2} />
@@ -137,13 +134,42 @@ function MainPage() {
                     potrebám.
                 </p>
                 <a className={styles.podmeVyvijat}>
-                            Poďme vyvíjať ›
-                        </a>
+                    Poďme vyvíjať ›
+                </a>
             </div>
             <div className={styles.postup}>
+
                 <h1 className={styles.postupTitle}>Ako to robíme my?</h1>
                 <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
+                <div className={styles.cards}>
+                    
+                    <div className={styles.postup1Container}>
+                        <div className={styles.postup1Rectangle}>
+                            <span className={styles.postup1SubTitle}>
+                                Zistíme o Vašich potrebách a požiadavkách, či už pri príjemnej káve, online stretnutí alebo iným spôsobom.                            </span>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2Container}>
+                        <div className={styles.postup2Rectangle}>
+                            <span className={styles.postup2SubTitle}>
+                                Dôkladne porozumieme problému prostredníctvom podrobného primárneho a sekundárneho výskumu.
+                            </span>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup3Container}>
+                        <div className={styles.postup3Rectangle}>
+                            <span className={styles.postup3SubTitle}>
+                                Vytvoríme nápady na riešenia pomocou mapovania procesov a definovania architektúry.                            </span>
+                        </div>
+                    </div>
+
                 </div>
+
+            </div>
+
+
         </div>
 
 
