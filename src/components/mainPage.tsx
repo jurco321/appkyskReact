@@ -136,7 +136,14 @@ function MainPage() {
                     prispôsobené Vašim
                     potrebám.
                 </p>
+                <a className={styles.podmeVyvijat}>
+                            Poďme vyvíjať ›
+                        </a>
             </div>
+            <div className={styles.postup}>
+                <h1 className={styles.postupTitle}>Ako to robíme my?</h1>
+                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
+                </div>
         </div>
 
 

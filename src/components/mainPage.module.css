@@ -525,4 +525,82 @@
 .iconEllipseContainer {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    max-width: 1140px;
+}
+
+.iconBrandsLogo {
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 43px;
+}
+
+.iconBrandsLogo:hover {
+    transform: scale(1.1);
+
+    transition: transform 0.6s;
+}
+
+@media (max-width: 1217px) {
+    .iconBrandsLogo {
+        margin-right: -10px;
+        margin-left: -10px;
+        margin-bottom: 43px;
+    }
+}
+
+@media (max-width: 796px) {
+    .iconBrandsLogo {
+        margin-right: -20px;
+        margin-left: -20px;
+        margin-bottom: 43px;
+    }
+}
+
+@media (max-width: 796px) {
+    .iconBrandsLogo {
+        display: none;
+    }
+}
+
+.podmeVyvijat {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+    max-width: 157px;
+    text-align: center;
+    margin: 0;
+    margin-top: 34px;
+}
+
+
+
+
+
+
+
+
+
+.postup {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1140px;
+    align-items: center;
+    margin-top: 100px;
+    justify-content: center;
+}
+
+.postupTitle {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 44px;
+    color: #001331;
+    margin-bottom: 20px;
+    max-width: 315px;
 }
