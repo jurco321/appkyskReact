@@ -71,7 +71,7 @@ function MainPage() {
                 <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
                 <div className={styles.sluzbyContainer}>
                     <div className={styles.mobilneApps}>
-                        <img src="/public/mobilneApps.svg" className={styles.beruska} />
+                        <img src="/public/mobilneApps.svg" alt='mobilneApps' className={styles.beruska} />
                         <h2 className={styles.mobilneAppsTitle}>Vývoj
                             mobilných aplikácií
                         </h2>
@@ -85,7 +85,7 @@ function MainPage() {
                         </a>
                     </div>
                     <div className={styles.weboveApps}>
-                        <img src="/public/weboveApps.svg" className={styles.beruska} />
+                        <img src="/public/weboveApps.svg" alt='weboveApps' className={styles.beruska} />
                         <h2 className={styles.weboveAppsTitle}>Vývoj
                             webových aplikácií
                         </h2>
@@ -99,7 +99,7 @@ function MainPage() {
                         </a>
                     </div>
                     <div className={styles.uiuxApps}>
-                        <img src="public/uiuxApps.svg" className={styles.beruska} />
+                        <img src="public/uiuxApps.svg" alt='uiuxApps' className={styles.beruska} />
                         <h2 className={styles.uiuxAppsTitle}>UI / UX Dizajn</h2>
                         <p className={styles.uiuxAppsSubTitle}>
                             S veľkou vášňou sa venujeme tvorbe nádherných a praktických používateľských rozhraní, ktoré
@@ -114,7 +114,14 @@ function MainPage() {
             <div className={styles.oNas}>
                 <div className={styles.oNasBg2} />
                 <div className={styles.iconEllipseContainer}>
-                    <img src="public/iconEllipse.svg" alt="IconEllipse" className={styles.iconBrandsLogo} />
+                    <img src="public/iconReact.svg" alt="IconReact" className={styles.iconBrandsLogo} />
+                    <img src="public/iconFirebase.svg" alt="IconFirebase" className={styles.iconBrandsLogo} />
+                    <img src="public/iconAndroid.svg" alt="IconAndroid" className={styles.iconBrandsLogo} />
+                    <img src="public/iconGithub.svg" alt="IconGithub" className={styles.iconBrandsLogo} />
+                    <img src="public/iconJava.svg" alt="IconJava" className={styles.iconBrandsLogo} />
+                    <img src="public/iconFigma.svg" alt="IconFigma" className={styles.iconBrandsLogo} />
+                    <img src="public/iconApple.svg" alt="IconApple" className={styles.iconBrandsLogo} />
+                    <img src="public/iconNode.svg" alt="IconNode" className={styles.iconBrandsLogo} />
                 </div>
                 <h2 className={styles.oNasTitle}>
                     Prečo si na vytváranie krásnych aplikácií vybrať Appky?

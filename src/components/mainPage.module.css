@@ -133,6 +133,8 @@
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: 50px;
+    width: 570px;
+    height: 594px;
 }
 
 .headerGifSmaller {
@@ -275,7 +277,7 @@
 
 }
 
-@media (max-width: 681px) {
+@media (max-width: 697px) {
     .navBarItem {
         display: none;
     }
@@ -523,12 +525,4 @@
 .iconEllipseContainer {
     display: flex;
     flex-direction: row;
-}
-
-.iconBrandsLogo {
-    background-image: url("../assets/reactNative.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    z-index: 1;
 }
