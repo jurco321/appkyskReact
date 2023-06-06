@@ -1,6 +1,6 @@
 :root {
     background-color: #F5F5F5
-  }
+}
 
 .body {
     display: flex;
@@ -954,4 +954,204 @@
 
 .specialText {
     color: #654ACE;
+}
+
+
+
+
+
+
+
+
+.Contact {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    background-color: #FFFFFF;
+    margin-top: 100px;
+}
+
+.ContactMaxWidth {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1140px;
+    align-items: center;
+    margin-top: 100px;
+
+}
+
+.ContactTitle {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 44px;
+    color: #001331;
+    margin-bottom: 20px;
+    max-width: 630px;
+}
+
+.formular {
+    display: flex;
+    flex-direction: row;
+    margin-top: 69px;
+}
+
+.me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menoemail {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.mobilpomoc {
+    display: flex;
+    flex-direction: row;
+}
+
+.dozvedeli {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+}
+
+.povedztenam {
+    display: flex;
+    flex-direction: row;
+}
+
+.meTitle {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    color: #001739;
+    margin-top: 37px;
+    max-width: 201px;
+    text-align: center;
+}
+
+.vyplnovacka {
+    margin-left: 64px;
+}
+
+.meSubTitle {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #001739;
+    margin-top: 15px;
+    max-width: 275px;
+    text-align: left;
+}
+
+.formMeno {
+    display: flex;
+    flex-direction: column;
+    margin-right: 17px;
+}
+
+.formEmail {
+    display: flex;
+    flex-direction: column;
+}
+
+.formMobil {
+    display: flex;
+    flex-direction: column;
+    margin-right: 17px;
+}
+
+.formHelp {
+    display: flex;
+    flex-direction: column;
+}
+
+.formFrom {
+    display: flex;
+    flex-direction: column;
+}
+
+.borderBox {
+    width: 271px;
+    height: 38px;
+    box-sizing: content-box;
+    border-width: 1px;
+    border-color: #C4C4C4;
+    outline: none;
+    box-shadow: none;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    padding-left: 8px;
+}
+
+.borderBoxLarge {
+    width: 560px;
+    height: 196px;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-color: #C4C4C4;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 196px;
+    color: black;
+    padding-left: 8px;
+    vertical-align: top;
+}
+
+.labelText {
+    margin-bottom: 9px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(0, 23, 57, 0.8);
+
+}
+
+.sendButton {
+    margin-top: 30px;
+    display: flex;
+    justify-content: end;
+}
+
+.sendButtonStyle {
+    padding: 12px 39.92px 12px 40px;
+    background: linear-gradient(90deg, #1681E3 0%, #09A7FE 100%);
+    border-radius: 25px;
+
+    box-sizing: border-box;
+    border: 0px solid #FFFFFF;
+
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.sendButtonStyle:hover {
+    transform: scale(1.1);
+    transition: transform 0.6s;
 }

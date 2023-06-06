@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './mainPage.module.css';
 
+
+
 function MainPage() {
 
     const [scrolled, setScrolled] = useState(false);
@@ -16,7 +18,15 @@ function MainPage() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
+
+
+
+
     }, []);
+
+
+
+
 
     return (
         <div className={styles.body}>
@@ -399,6 +409,67 @@ function MainPage() {
 
                 </div>
 
+            </div>
+
+
+            <div className={styles.Contact}>
+
+                <div className={styles.ContactMaxWidth}>
+                    <h1 className={styles.ContactTitle}>Vytvorme spoločne úspešné aplikácie!</h1>
+                    <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
+
+                    <div className={styles.formular}>
+                        <div className={styles.me}>
+                            <img src='/public/me.png' alt='mePhoto' />
+                            <span className={styles.meTitle}>Kontaktujte nás</span>
+                            <span className={styles.meSubTitle}>Ahoj, volám sa Juraj, manažér pre rozvoj podnikania pre spoločnosť Appky s.r.o. Rád by som s Vami prebral Váš projekt a Vaše potreby. </span>
+                            <span className={styles.meSubTitle}>Vyplňte formulár alebo nám pošlite email na hello@appky.sk. Odpovieme Vám do 24 hodín! </span>
+                        </div>
+
+                        <div className={styles.vyplnovacka}>
+                            <div className={styles.menoemail}>
+                                <div className={styles.formMeno}>
+                                    <label htmlFor="name" className={styles.labelText}>Meno</label>
+                                    <input type="text" id="name" name="name" className={styles.borderBox} />
+                                </div>
+                                <div className={styles.formEmail}>
+                                    <label htmlFor='email' className={styles.labelText}>E-mail</label>
+                                    <input type="text" id="name" name="name" className={styles.borderBox} />
+                                </div>
+                            </div>
+                            <div className={styles.mobilpomoc}>
+                                <div className={styles.menoemail}>
+                                    <div className={styles.formMobil}>
+                                        <label htmlFor="name" className={styles.labelText}>Mobil (nepovinné)</label>
+                                        <input type="text" id="name" name="name" className={styles.borderBox} />
+                                    </div>
+                                    <div className={styles.formHelp}>
+                                        <label htmlFor='email' className={styles.labelText}>Ako Vám môžeme pomôcť?</label>
+                                        <input type="text" id="name" name="name" className={styles.borderBox} />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className={styles.dozvedeli}>
+                                <div className={styles.formFrom}>
+                                    <label htmlFor='email' className={styles.labelText}>Ako ste sa o nás dozvedeli?</label>
+                                    <input type="text" id="name" name="name" className={styles.borderBox} />
+                                </div>
+                            </div>
+
+                            <div className={styles.povedztenam}>
+                                <div className={styles.formFrom}>
+                                    <label htmlFor='email' className={styles.labelText}>Povedzte nám o Vašom projekte!</label>
+                                    <input type="text" id="name" name="name" className={styles.borderBoxLarge} />
+                                </div>
+                            </div>
+                            <div className={styles.sendButton}>
+                                <button className={styles.sendButtonStyle}>Odoslať</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
 
 
