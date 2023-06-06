@@ -1,3 +1,7 @@
+:root {
+    background-color: #F5F5F5
+  }
+
 .body {
     display: flex;
     flex-direction: column;
@@ -596,6 +600,40 @@
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    margin-top: 90px;
+}
+
+.cardsSmaller {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 90px;
+}
+
+.cardsMobile {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 90px;
+    width: 100%;
+    height: 100%;
+}
+
+.cardsSmaller2 {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.cards2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .postupTitle {
@@ -613,15 +651,31 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
-    margin-top: 90px;
     width: 100%;
+}
+
+.postup2ContainerSmaller {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+.postup2ContainerMobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 100%;
 }
 
 .postup2Rectangle {
     max-width: 366px;
     height: 322px;
-    background-color: #F5F5F5;
+    background-color: #FFFFFF;
     box-shadow: 6px 6px 10px -4px rgba(134, 134, 134, 0.15);
     justify-content: center;
     align-items: center;
@@ -646,14 +700,52 @@
     display: flex;
     flex-direction: row;
     align-self: flex-start;
-    margin-top: 90px;
     width: 100%;
+}
+
+.postup1ContainerSmaller {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.postup1ContainerMobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .postup1Rectangle {
     max-width: 366px;
     height: 322px;
-    background-color: #F5F5F5;
+    background-color: #FFFFFF;
+    box-shadow: 6px 6px 10px -4px rgba(134, 134, 134, 0.15);
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 24px;
+}
+
+.postup1RectangleSmaller,
+.postup2RectangleSmaller {
+    width: 366px;
+    height: 322px;
+    background-color: #FFFFFF;
+    box-shadow: 6px 6px 10px -4px rgba(134, 134, 134, 0.15);
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    border-radius: 24px;
+}
+
+.postup1RectangleMobile,
+.postup2RectangleMobile {
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
     box-shadow: 6px 6px 10px -4px rgba(134, 134, 134, 0.15);
     justify-content: center;
     align-items: center;
@@ -672,6 +764,7 @@
     text-align: left;
     margin: 0;
     margin-top: 7px;
+
 }
 
 .postup3Container {
@@ -679,14 +772,13 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    margin-top: 90px;
     width: 100%;
 }
 
 .postup3Rectangle {
     max-width: 366px;
     height: 322px;
-    background-color: #F5F5F5;
+    background-color: #FFFFFF;
     box-shadow: 6px 6px 10px -4px rgba(134, 134, 134, 0.15);
     justify-content: center;
     align-items: center;
@@ -705,4 +797,161 @@
     text-align: left;
     margin: 0;
     margin-top: 7px;
+}
+
+.postupIcon {
+    margin-top: 42px;
+    margin-bottom: 20px
+}
+
+.postupInsideWidth {
+    max-width: 327px;
+    margin-left: 20px;
+}
+
+.postup2Rectangle:hover {
+    background-color: #6456C8;
+    transition: background-color 0.6s ease;
+}
+
+.postup2Rectangle:hover .postup2SubTitle,
+.postup2Rectangle:hover .specialText {
+    color: white;
+    transition: color 0.6s ease;
+}
+
+.postup2Rectangle:hover img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+}
+
+.postup1Rectangle:hover {
+    background-color: #6456C8;
+    transition: background-color 0.6s ease;
+}
+
+.postup1Rectangle:hover .postup1SubTitle,
+.postup1Rectangle:hover .specialText {
+    color: white;
+    transition: color 0.6s ease;
+}
+
+.postup1Rectangle:hover img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+}
+
+.postup3Rectangle:hover {
+    background-color: #6456C8;
+    transition: background-color 0.6s ease;
+}
+
+.postup3Rectangle:hover .postup3SubTitle,
+.postup3Rectangle:hover .specialText {
+    color: white;
+    transition: color 0.6s ease;
+}
+
+.postup3Rectangle:hover img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+}
+
+@media (max-width: 1155px) {
+
+    .cards,
+    .cards2 {
+        display: none;
+    }
+}
+
+@media (max-width: 1155px) {
+
+    .cardsSmaller2,
+    .cardsSmaller {
+        display: flex;
+    }
+}
+
+@media (max-width: 777px) {
+
+    .cardsSmaller2,
+    .cardsSmaller {
+        display: none;
+    }
+}
+
+@media (max-width: 777px) {
+
+    .cardsMobile {
+        display: flex;
+    }
+}
+
+.postup2RectangleSmaller:hover {
+    background-color: #6456C8;
+    transition: background-color 0.6s ease;
+}
+
+.postup2RectangleSmaller:hover .postup2SubTitle,
+.postup2RectangleSmaller:hover .specialText {
+    color: white;
+    transition: color 0.6s ease;
+}
+
+.postup2RectangleSmaller:hover img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+}
+
+.postup1RectangleSmaller:hover {
+    background-color: #6456C8;
+    transition: background-color 0.6s ease;
+}
+
+.postup1RectangleSmaller:hover .postup1SubTitle,
+.postup1RectangleSmaller:hover .specialText {
+    color: white;
+    transition: color 0.6s ease;
+}
+
+.postup1RectangleSmaller:hover img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+}
+
+.postup2RectangleMobile:hover {
+    background-color: #6456C8;
+    transition: background-color 0.6s ease;
+}
+
+.postup2RectangleMobile:hover .postup2SubTitle,
+.postup2RectangleMobile:hover .specialText {
+    color: white;
+    transition: color 0.6s ease;
+}
+
+.postup2RectangleMobile:hover img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+}
+
+.postup1RectangleMobile:hover {
+    background-color: #6456C8;
+    transition: background-color 0.6s ease;
+}
+
+.postup1RectangleMobile:hover .postup1SubTitle,
+.postup1RectangleMobile:hover .specialText {
+    color: white;
+    transition: color 0.6s ease;
+}
+
+.postup1RectangleMobile:hover img {
+    filter: brightness(0) invert(1);
+    transition: filter 0.6s ease;
+}
+
+.specialText {
+    color: #654ACE;
 }

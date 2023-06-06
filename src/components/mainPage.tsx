@@ -142,26 +142,258 @@ function MainPage() {
                 <h1 className={styles.postupTitle}>Ako to robíme my?</h1>
                 <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
                 <div className={styles.cards}>
-                    
+
                     <div className={styles.postup1Container}>
                         <div className={styles.postup1Rectangle}>
-                            <span className={styles.postup1SubTitle}>
-                                Zistíme o Vašich potrebách a požiadavkách, či už pri príjemnej káve, online stretnutí alebo iným spôsobom.                            </span>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/meeting.svg" alt="IconMeeting"></img>
+                                </div>
+                                <span className={styles.postup1SubTitle}>
+                                    Zistíme o Vašich <span className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                </span>
+                            </div>
                         </div>
                     </div>
 
                     <div className={styles.postup2Container}>
                         <div className={styles.postup2Rectangle}>
-                            <span className={styles.postup2SubTitle}>
-                                Dôkladne porozumieme problému prostredníctvom podrobného primárneho a sekundárneho výskumu.
-                            </span>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/research.svg" alt="IconResearch"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Dôkladne porozumieme problému prostredníctvom <span className={styles.specialText}>podrobného primárneho a sekundárneho výskumu.</span>
+                                </span>
+                            </div>
                         </div>
                     </div>
 
                     <div className={styles.postup3Container}>
                         <div className={styles.postup3Rectangle}>
-                            <span className={styles.postup3SubTitle}>
-                                Vytvoríme nápady na riešenia pomocou mapovania procesov a definovania architektúry.                            </span>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/brainstorming.svg" alt="IconBrainstorming"></img>
+                                </div>
+                                <span className={styles.postup3SubTitle}>
+                                    Vytvoríme <span className={styles.specialText}>nápady na riešenia</span> pomocou mapovania procesov a definovania architektúry.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className={styles.cardsSmaller}>
+
+                    <div className={styles.postup1ContainerSmaller}>
+                        <div className={styles.postup1RectangleSmaller}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/meeting.svg" alt="IconMeeting"></img>
+                                </div>
+                                <span className={styles.postup1SubTitle}>
+                                    Zistíme o Vašich <span className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2ContainerSmaller}>
+                        <div className={styles.postup2RectangleSmaller}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/research.svg" alt="IconResearch"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Dôkladne porozumieme problému prostredníctvom <span className={styles.specialText}>podrobného primárneho a sekundárneho výskumu.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div className={styles.cardsSmaller2}>
+
+                    <div className={styles.postup1ContainerSmaller}>
+                        <div className={styles.postup1RectangleSmaller}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/brainstorming.svg" alt="IconBrainstorming"></img>
+                                </div>
+                                <span className={styles.postup1SubTitle}>
+                                    Vytvoríme <span className={styles.specialText}>nápady na riešenia</span> pomocou mapovania procesov a definovania architektúry.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2ContainerSmaller}>
+                        <div className={styles.postup2RectangleSmaller}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/sketching.svg" alt="IconSketching"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Navrhujeme <span className={styles.specialText}>krásne, použiteľné a s vašou značkou prepojené</span> produkty, ktoré splnia vaše ciele.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div className={styles.cardsSmaller2}>
+
+                    <div className={styles.postup1ContainerSmaller}>
+                        <div className={styles.postup1RectangleSmaller}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/developing.svg" alt="IconDeveloping"></img>
+                                </div>
+                                <span className={styles.postup1SubTitle}>
+                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2ContainerSmaller}>
+                        <div className={styles.postup2RectangleSmaller}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/launch.svg" alt="IconLaunch"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div className={styles.cardsMobile}>
+
+                    <div className={styles.postup1ContainerMobile}>
+                        <div className={styles.postup1RectangleMobile}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/meeting.svg" alt="IconMeeting"></img>
+                                </div>
+                                <span className={styles.postup1SubTitle}>
+                                    Zistíme o Vašich <span className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2ContainerMobile}>
+                        <div className={styles.postup2RectangleMobile}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/research.svg" alt="IconResearch"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Dôkladne porozumieme problému prostredníctvom <span className={styles.specialText}>podrobného primárneho a sekundárneho výskumu.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2ContainerMobile}>
+                        <div className={styles.postup2RectangleMobile}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/brainstorming.svg" alt="IconBrainstorming"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Vytvoríme <span className={styles.specialText}>nápady na riešenia</span> pomocou mapovania procesov a definovania architektúry.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2ContainerMobile}>
+                        <div className={styles.postup2RectangleMobile}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/sketching.svg" alt="IconSketching"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Navrhujeme <span className={styles.specialText}>krásne, použiteľné a s vašou značkou prepojené</span> produkty, ktoré splnia vaše ciele.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2ContainerMobile}>
+                        <div className={styles.postup2RectangleMobile}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/developing.svg" alt="IconDeveloping"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2ContainerMobile}>
+                        <div className={styles.postup2RectangleMobile}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/launch.svg" alt="IconLaunch"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div className={styles.cards2}>
+
+                    <div className={styles.postup1Container}>
+                        <div className={styles.postup1Rectangle}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/sketching.svg" alt="IconSketching"></img>
+                                </div>
+                                <span className={styles.postup1SubTitle}>
+                                    Navrhujeme <span className={styles.specialText}>krásne, použiteľné a s vašou značkou prepojené</span> produkty, ktoré splnia vaše ciele.
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup2Container}>
+                        <div className={styles.postup2Rectangle}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/developing.svg" alt="IconDeveloping"></img>
+                                </div>
+                                <span className={styles.postup2SubTitle}>
+                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className={styles.postup3Container}>
+                        <div className={styles.postup3Rectangle}>
+                            <div className={styles.postupInsideWidth}>
+                                <div className={styles.postupIcon}>
+                                    <img src="public/launch.svg" alt="IconLaunch"></img>
+                                </div>
+                                <span className={styles.postup3SubTitle}>
+                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                </span>
+                            </div>
                         </div>
                     </div>
 
