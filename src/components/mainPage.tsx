@@ -55,11 +55,11 @@ function MainPage() {
             </div>
             <div className={styles.header}>
                 <div className={styles.headerTitle}>
-                    <h1 className={styles.title}>Vyvíjame appky,
+                    <h1 className={`${ styles.title } ${ styles.flyIn1 }`}>Vyvíjame appky,
                         ktoré potešia vašich
                         používatelov a podporia
                         rast vášho podnikania</h1>
-                    <p className={styles.subTitle}>Natívna vývojová agentúra, pripravená na návrh, vytvárať a rozvíjať
+                    <p className={`${ styles.subTitle } ${ styles.flyIn2 }`}>Natívna vývojová agentúra, pripravená na návrh, vytvárať a rozvíjať
                         softvérové aplikácie
                         svetovej úrovne.
                     </p>
@@ -464,7 +464,7 @@ function MainPage() {
                                 </div>
                             </div>
                             <div className={styles.sendButton}>
-                                <button className={styles.sendButtonStyle}>Odoslať</button>
+                                <button className={styles.sendButtonStyle} id="submitButton">Odoslať</button>
                             </div>
                         </div>
 
