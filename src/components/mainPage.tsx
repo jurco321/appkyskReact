@@ -41,8 +41,8 @@ function MainPage() {
             />
             <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
 
-            <div className={styles.headerSvg} />
-            <div className={styles.headerSvg2} />
+            <div className={ `${ styles.headerSvg } breathingAnimation `} />
+            <div className={ `${ styles.headerSvg2 } breathingAnimation`} />
             <div className={styles.topNavBarParent + (scrolled ? ' ' + styles.scrolled : '')}>
                 <div className={styles.topNavBar}>
                     <img src='/public/appkyLogo.png' alt="Logo" className={styles.appkyLogo} />
@@ -423,7 +423,7 @@ function MainPage() {
                             <img src='/public/me.png' alt='mePhoto' />
                             <span className={styles.meTitle}>Kontaktujte nás</span>
                             <span className={styles.meSubTitle}>Ahoj, volám sa Juraj, manažér pre rozvoj podnikania pre spoločnosť Appky s.r.o. Rád by som s Vami prebral Váš projekt a Vaše potreby. </span>
-                            <span className={styles.meSubTitle}>Vyplňte formulár alebo nám pošlite email na hello@appky.sk. Odpovieme Vám do 24 hodín! </span>
+                            <span className={styles.meSubTitle}>Vyplňte formulár alebo nám pošlite email na <span className={styles.specialEmailText}>hello@appky.sk.</span>  Odpovieme Vám do 24 hodín! </span>
                         </div>
 
                         <div className={styles.vyplnovacka}>

@@ -74,6 +74,7 @@
     background-size: cover 100%;
     background-position: center top;
     z-index: -2;
+    animation: breathingAnimation 30s infinite;
 }
 
 .headerSvg2 {
@@ -87,7 +88,20 @@
     background-size: contain 100%;
     background-position: left top;
     z-index: -1;
+    animation: breathingAnimation 10s infinite;
 }
+
+@keyframes breathingAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
 
 .topNavBarParent {
     position: sticky;
@@ -1113,6 +1127,19 @@
     max-width: 275px;
     text-align: left;
     font-style: normal;
+}
+
+.specialEmailText {
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #09A7FE;
+    margin-top: 15px;
+    max-width: 275px;
+    text-align: left;
+    font-style: normal;
+    text-decoration: underline;
 }
 
 .formMeno {
