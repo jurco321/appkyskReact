@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0c2c19c6-945d-4001-8297-3433668c676f" name="Changes" comment="adding firebase config">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-    </list>
+    <list default="true" id="0c2c19c6-945d-4001-8297-3433668c676f" name="Changes" comment="adding firebase config" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,7 +53,7 @@
       <workItem from="1685844239511" duration="6568000" />
       <workItem from="1685936852938" duration="2028000" />
       <workItem from="1686116319330" duration="624000" />
-      <workItem from="1686149623211" duration="931000" />
+      <workItem from="1686149623211" duration="996000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring to react, next part">
       <created>1685881982022</created>
@@ -99,7 +97,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686150509164</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="adding firebase config">
+      <created>1686150578887</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686150578887</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
