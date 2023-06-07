@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c2c19c6-945d-4001-8297-3433668c676f" name="Changes" comment="refactoring to react, next part">
+      <change afterPath="$PROJECT_DIR$/src/firebase/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +54,9 @@
       <updated>1685696510282</updated>
       <workItem from="1685696513972" duration="19000" />
       <workItem from="1685844239511" duration="6568000" />
-      <workItem from="1685936852938" duration="1942000" />
+      <workItem from="1685936852938" duration="2028000" />
+      <workItem from="1686116319330" duration="624000" />
+      <workItem from="1686149623211" duration="680000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring to react, next part">
       <created>1685881982022</created>
@@ -84,7 +86,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685938416948</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="refactoring to react, next part">
+      <created>1685938889857</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685938889857</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
