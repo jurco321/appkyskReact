@@ -1,6 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import styles from './mainPage.module.css';
+import {initializeApp} from "firebase/app";
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+    apiKey: "AIzaSyB5C60SxPpX-OBuIh4mzY-cZdXGtIvDcQ0",
+    authDomain: "appkysk-f1f60.firebaseapp.com",
+    projectId: "appkysk-f1f60",
+    storageBucket: "appkysk-f1f60.appspot.com",
+    messagingSenderId: "680691983121",
+    appId: "1:680691983121:web:d636ca0b39e57e7446e2b0",
+    measurementId: "G-V8RDL270ZF"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const firestore = getFirestore(app);
 
 
 function MainPage() {
@@ -20,12 +37,52 @@ function MainPage() {
         };
 
 
-
-
     }, []);
 
 
+    useEffect(() => {
 
+        const submitButton = document.getElementById("submitButton");
+
+        const submitListener = () => {
+
+            // Get the values from the input fields
+            const emailElement = document.getElementById("email") as HTMLInputElement | null;
+            const email = emailElement?.value ?? '';
+
+            const textElement = document.getElementById("text") as HTMLInputElement | null;
+            const text = textElement?.value ?? '';
+
+            alert('sending email to : ' + email + ' with text : ' + text);
+
+            // Add a new document with the user-submitted data
+            const mailCollection = collection(firestore, 'mail');
+            addDoc(mailCollection, {
+                to: email,
+                message: {
+                    subject: 'Hello from Firebase!',
+                    html: text,
+                },
+            }).then(() => {
+                alert('MAIL DONE @ ');
+
+                console.log("Data successfully written to Firestore!");
+                // Optionally, you can display a success message or redirect the user
+            })
+                .catch((error: any) => {
+                    console.error("Error writing document: ", error);
+                    // Display an error message to the user
+                });
+        };
+
+        submitButton?.addEventListener("click", submitListener);
+
+        // Clean up the event listener when the component is unmounted
+        return () => {
+            submitButton?.removeEventListener("click", () => {
+            });
+        };
+    }, []);
 
 
     return (
@@ -39,46 +96,50 @@ function MainPage() {
                 href="https://fonts.gstatic.com"
                 crossOrigin=""
             />
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
+                rel="stylesheet"></link>
 
-            <div className={ `${ styles.headerSvg } breathingAnimation `} />
-            <div className={ `${ styles.headerSvg2 } breathingAnimation`} />
+            <div className={`${styles.headerSvg} breathingAnimation `}/>
+            <div className={`${styles.headerSvg2} breathingAnimation`}/>
             <div className={styles.topNavBarParent + (scrolled ? ' ' + styles.scrolled : '')}>
                 <div className={styles.topNavBar}>
-                    <img src='/public/appkyLogo.png' alt="Logo" className={styles.appkyLogo} />
+                    <img src='/public/appkyLogo.png' alt="Logo" className={styles.appkyLogo}/>
                     <b className={styles.navBarTitle}>Appky</b>
                     <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>Služby</a>
                     <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>O nás</a>
                     <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>Postup</a>
-                    <a href="#" className={`${styles.navBarItem} ${styles.scrolled} ${styles.navContactButton}`}>Kontaktujte nás</a>
+                    <a href="#" className={`${styles.navBarItem} ${styles.scrolled} ${styles.navContactButton}`}>Kontaktujte
+                        nás</a>
                 </div>
             </div>
             <div className={styles.header}>
                 <div className={styles.headerTitle}>
-                    <h1 className={`${ styles.title } ${ styles.flyIn1 }`}>Vyvíjame appky,
+                    <h1 className={`${styles.title} ${styles.flyIn1}`}>Vyvíjame appky,
                         ktoré potešia vašich
                         používatelov a podporia
                         rast vášho podnikania</h1>
-                    <p className={`${ styles.subTitle } ${ styles.flyIn2 }`}>Natívna vývojová agentúra, pripravená na návrh, vytvárať a rozvíjať
+                    <p className={`${styles.subTitle} ${styles.flyIn2}`}>Natívna vývojová agentúra, pripravená na návrh,
+                        vytvárať a rozvíjať
                         softvérové aplikácie
                         svetovej úrovne.
                     </p>
                     <div className={styles.headerGifSmaller}>
                         <img src='/public/appDesignAndDevelopment.gif' alt="Animation"
-                            className={styles.headerGifImgSmaller} />
+                             className={styles.headerGifImgSmaller}/>
                     </div>
                     <button className={styles.headerButton}>Kontaktujte nás</button>
                 </div>
                 <div className={styles.headerGif}>
-                    <img src="/public/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg} />
+                    <img src="/public/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg}/>
                 </div>
             </div>
             <div className={styles.sluzby}>
                 <h1 className={styles.sluzbyTitle}>Naše služby</h1>
-                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
+                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline"/>
                 <div className={styles.sluzbyContainer}>
                     <div className={styles.mobilneApps}>
-                        <img src="/public/mobilneApps.svg" alt='mobilneApps' className={styles.beruska} />
+                        <img src="/public/mobilneApps.svg" alt='mobilneApps' className={styles.beruska}/>
                         <h2 className={styles.mobilneAppsTitle}>Vývoj
                             mobilných aplikácií
                         </h2>
@@ -92,7 +153,7 @@ function MainPage() {
                         </a>
                     </div>
                     <div className={styles.weboveApps}>
-                        <img src="/public/weboveApps.svg" alt='weboveApps' className={styles.beruska} />
+                        <img src="/public/weboveApps.svg" alt='weboveApps' className={styles.beruska}/>
                         <h2 className={styles.weboveAppsTitle}>Vývoj
                             webových aplikácií
                         </h2>
@@ -106,7 +167,7 @@ function MainPage() {
                         </a>
                     </div>
                     <div className={styles.uiuxApps}>
-                        <img src="public/uiuxApps.svg" alt='uiuxApps' className={styles.beruska} />
+                        <img src="public/uiuxApps.svg" alt='uiuxApps' className={styles.beruska}/>
                         <h2 className={styles.uiuxAppsTitle}>UI / UX Dizajn</h2>
                         <p className={styles.uiuxAppsSubTitle}>
                             S veľkou vášňou sa venujeme tvorbe nádherných a praktických používateľských rozhraní, ktoré
@@ -119,16 +180,16 @@ function MainPage() {
                 </div>
             </div>
             <div className={styles.oNas}>
-                <div className={styles.oNasBg2} />
+                <div className={styles.oNasBg2}/>
                 <div className={styles.iconEllipseContainer}>
-                    <img src="public/iconReact.svg" alt="IconReact" className={styles.iconBrandsLogo} />
-                    <img src="public/iconFirebase.svg" alt="IconFirebase" className={styles.iconBrandsLogo} />
-                    <img src="public/iconAndroid.svg" alt="IconAndroid" className={styles.iconBrandsLogo} />
-                    <img src="public/iconGithub.svg" alt="IconGithub" className={styles.iconBrandsLogo} />
-                    <img src="public/iconJava.svg" alt="IconJava" className={styles.iconBrandsLogo} />
-                    <img src="public/iconFigma.svg" alt="IconFigma" className={styles.iconBrandsLogo} />
-                    <img src="public/iconApple.svg" alt="IconApple" className={styles.iconBrandsLogo} />
-                    <img src="public/iconNode.svg" alt="IconNode" className={styles.iconBrandsLogo} />
+                    <img src="public/iconReact.svg" alt="IconReact" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconFirebase.svg" alt="IconFirebase" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconAndroid.svg" alt="IconAndroid" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconGithub.svg" alt="IconGithub" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconJava.svg" alt="IconJava" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconFigma.svg" alt="IconFigma" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconApple.svg" alt="IconApple" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconNode.svg" alt="IconNode" className={styles.iconBrandsLogo}/>
                 </div>
                 <h2 className={styles.oNasTitle}>
                     Prečo si na vytváranie krásnych aplikácií vybrať Appky?
@@ -150,7 +211,7 @@ function MainPage() {
             <div className={styles.postup}>
 
                 <h1 className={styles.postupTitle}>Ako to robíme my?</h1>
-                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
+                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline"/>
                 <div className={styles.cards}>
 
                     <div className={styles.postup1Container}>
@@ -160,7 +221,8 @@ function MainPage() {
                                     <img src="public/meeting.svg" alt="IconMeeting"></img>
                                 </div>
                                 <span className={styles.postup1SubTitle}>
-                                    Zistíme o Vašich <span className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                    Zistíme o Vašich <span
+                                    className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
                                 </span>
                             </div>
                         </div>
@@ -203,7 +265,8 @@ function MainPage() {
                                     <img src="public/meeting.svg" alt="IconMeeting"></img>
                                 </div>
                                 <span className={styles.postup1SubTitle}>
-                                    Zistíme o Vašich <span className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                    Zistíme o Vašich <span
+                                    className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
                                 </span>
                             </div>
                         </div>
@@ -261,7 +324,8 @@ function MainPage() {
                                     <img src="public/developing.svg" alt="IconDeveloping"></img>
                                 </div>
                                 <span className={styles.postup1SubTitle}>
-                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span
+                                    className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
                                 </span>
                             </div>
                         </div>
@@ -274,7 +338,8 @@ function MainPage() {
                                     <img src="public/launch.svg" alt="IconLaunch"></img>
                                 </div>
                                 <span className={styles.postup2SubTitle}>
-                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span
+                                    className={styles.specialText}>generovali pozitívny vplyv.</span>
                                 </span>
                             </div>
                         </div>
@@ -291,7 +356,8 @@ function MainPage() {
                                     <img src="public/meeting.svg" alt="IconMeeting"></img>
                                 </div>
                                 <span className={styles.postup1SubTitle}>
-                                    Zistíme o Vašich <span className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                    Zistíme o Vašich <span
+                                    className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
                                 </span>
                             </div>
                         </div>
@@ -343,7 +409,8 @@ function MainPage() {
                                     <img src="public/developing.svg" alt="IconDeveloping"></img>
                                 </div>
                                 <span className={styles.postup2SubTitle}>
-                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span
+                                    className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
                                 </span>
                             </div>
                         </div>
@@ -356,7 +423,8 @@ function MainPage() {
                                     <img src="public/launch.svg" alt="IconLaunch"></img>
                                 </div>
                                 <span className={styles.postup2SubTitle}>
-                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span
+                                    className={styles.specialText}>generovali pozitívny vplyv.</span>
                                 </span>
                             </div>
                         </div>
@@ -388,7 +456,8 @@ function MainPage() {
                                     <img src="public/developing.svg" alt="IconDeveloping"></img>
                                 </div>
                                 <span className={styles.postup2SubTitle}>
-                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                    Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span
+                                    className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
                                 </span>
                             </div>
                         </div>
@@ -401,7 +470,8 @@ function MainPage() {
                                     <img src="public/launch.svg" alt="IconLaunch"></img>
                                 </div>
                                 <span className={styles.postup3SubTitle}>
-                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                    Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span
+                                    className={styles.specialText}>generovali pozitívny vplyv.</span>
                                 </span>
                             </div>
                         </div>
@@ -416,51 +486,55 @@ function MainPage() {
 
                 <div className={styles.ContactMaxWidth}>
                     <h1 className={styles.ContactTitle}>Vytvorme spoločne úspešné aplikácie!</h1>
-                    <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
+                    <img className={styles.underLine} src="/public/underLine.svg" alt="Underline"/>
 
                     <div className={styles.formular}>
                         <div className={styles.me}>
-                            <img src='/public/me.png' alt='mePhoto' />
+                            <img src='/public/me.png' alt='mePhoto'/>
                             <span className={styles.meTitle}>Kontaktujte nás</span>
                             <span className={styles.meSubTitle}>Ahoj, volám sa Juraj, manažér pre rozvoj podnikania pre spoločnosť Appky s.r.o. Rád by som s Vami prebral Váš projekt a Vaše potreby. </span>
-                            <span className={styles.meSubTitle}>Vyplňte formulár alebo nám pošlite email na <span className={styles.specialEmailText}>hello@appky.sk.</span>  Odpovieme Vám do 24 hodín! </span>
+                            <span className={styles.meSubTitle}>Vyplňte formulár alebo nám pošlite email na <span
+                                className={styles.specialEmailText}>hello@appky.sk.</span>  Odpovieme Vám do 24 hodín! </span>
                         </div>
 
                         <div className={styles.vyplnovacka}>
                             <div className={styles.menoemail}>
                                 <div className={styles.formMeno}>
                                     <label htmlFor="name" className={styles.labelText}>Meno</label>
-                                    <input type="text" id="name" name="name" className={styles.borderBox} />
+                                    <input type="text" id="name" name="name" className={styles.borderBox}/>
                                 </div>
                                 <div className={styles.formEmail}>
                                     <label htmlFor='email' className={styles.labelText}>E-mail</label>
-                                    <input type="text" id="name" name="name" className={styles.borderBox} />
+                                    <input type="text" id="email" name="email" className={styles.borderBox}/>
                                 </div>
                             </div>
                             <div className={styles.mobilpomoc}>
                                 <div className={styles.menoemail}>
                                     <div className={styles.formMobil}>
                                         <label htmlFor="name" className={styles.labelText}>Mobil (nepovinné)</label>
-                                        <input type="text" id="name" name="name" className={styles.borderBox} />
+                                        <input type="text" id="name" name="name" className={styles.borderBox}/>
                                     </div>
                                     <div className={styles.formHelp}>
-                                        <label htmlFor='email' className={styles.labelText}>Ako Vám môžeme pomôcť?</label>
-                                        <input type="text" id="name" name="name" className={styles.borderBox} />
+                                        <label htmlFor='email' className={styles.labelText}>Ako Vám môžeme
+                                            pomôcť?</label>
+                                        <input type="text" id="text" name="text" className={styles.borderBox}/>
                                     </div>
                                 </div>
                             </div>
 
                             <div className={styles.dozvedeli}>
                                 <div className={styles.formFrom}>
-                                    <label htmlFor='email' className={styles.labelText}>Ako ste sa o nás dozvedeli?</label>
-                                    <input type="text" id="name" name="name" className={styles.borderBox} />
+                                    <label htmlFor='email' className={styles.labelText}>Ako ste sa o nás
+                                        dozvedeli?</label>
+                                    <input type="text" id="name" name="name" className={styles.borderBox}/>
                                 </div>
                             </div>
 
                             <div className={styles.povedztenam}>
                                 <div className={styles.formFrom}>
-                                    <label htmlFor='email' className={styles.labelText}>Povedzte nám o Vašom projekte!</label>
-                                    <input type="text" id="name" name="name" className={styles.borderBoxLarge} />
+                                    <label htmlFor='email' className={styles.labelText}>Povedzte nám o Vašom
+                                        projekte!</label>
+                                    <input type="text" id="name" name="name" className={styles.borderBoxLarge}/>
                                 </div>
                             </div>
                             <div className={styles.sendButton}>
