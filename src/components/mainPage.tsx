@@ -1,28 +1,29 @@
 import React, {useEffect, useState} from 'react';
 import styles from './mainPage.module.css';
-import {initializeApp} from "firebase/app";
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-    apiKey: "AIzaSyB5C60SxPpX-OBuIh4mzY-cZdXGtIvDcQ0",
-    authDomain: "appkysk-f1f60.firebaseapp.com",
-    projectId: "appkysk-f1f60",
-    storageBucket: "appkysk-f1f60.appspot.com",
-    messagingSenderId: "680691983121",
-    appId: "1:680691983121:web:d636ca0b39e57e7446e2b0",
-    measurementId: "G-V8RDL270ZF"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const firestore = getFirestore(app);
-
+import {collection, addDoc, doc, getDoc} from 'firebase/firestore';
+import {firestore} from "../firebase/config";
 
 function MainPage() {
 
     const [scrolled, setScrolled] = useState(false);
+
+
+    useEffect(() => {
+        console.log("useEffect in GetMenus");
+
+
+
+        const getAllData = async () => {
+            const docRef = doc(firestore, `mail`, `bWnMEOR3mFmWuroSOTbl`);
+            const targetDoc = await getDoc(docRef);
+            console.log("targetDoc.data() : ", targetDoc.data());
+            return { data: targetDoc.data() };
+        };
+
+        getAllData();
+    }, []);
+
+
 
     useEffect(() => {
         const handleScroll = () => {
