@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './mainPage.module.css';
 
 
@@ -19,10 +19,20 @@ function MainPage() {
             window.removeEventListener('scroll', handleScroll);
         };
 
-
-
-
     }, []);
+
+
+    const sluzbyRef = useRef<HTMLDivElement>(null); // Define the type for sluzbyRef
+
+    const handleSluzbyClick = () => {
+        console.log(`handleSluzbyClick called`);
+        if (sluzbyRef.current) {
+            sluzbyRef.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+
+
 
 
 
@@ -41,13 +51,13 @@ function MainPage() {
             />
             <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
 
-            <div className={ `${ styles.headerSvg } breathingAnimation `} />
-            <div className={ `${ styles.headerSvg2 } breathingAnimation`} />
+            <div className={`${styles.headerSvg} breathingAnimation `} />
+            <div className={`${styles.headerSvg2} breathingAnimation`} />
             <div className={styles.topNavBarParent + (scrolled ? ' ' + styles.scrolled : '')}>
                 <div className={styles.topNavBar}>
-                    <img src='/public/appkyLogo.png' alt="Logo" className={styles.appkyLogo} />
+                    <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo} />
                     <b className={styles.navBarTitle}>Appky</b>
-                    <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>Služby</a>
+                    <a href="#sluzby" className={`${styles.navBarItem} ${styles.scrolled}`} onClick={handleSluzbyClick}>Služby</a>
                     <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>O nás</a>
                     <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>Postup</a>
                     <a href="#" className={`${styles.navBarItem} ${styles.scrolled} ${styles.navContactButton}`}>Kontaktujte nás</a>
@@ -55,11 +65,11 @@ function MainPage() {
             </div>
             <div className={styles.header}>
                 <div className={styles.headerTitle}>
-                    <h1 className={`${ styles.title } ${ styles.flyIn1 }`}>Vyvíjame appky,
+                    <h1 className={`${styles.title} ${styles.flyIn1}`}>Vyvíjame appky,
                         ktoré potešia vašich
                         používatelov a podporia
                         rast vášho podnikania</h1>
-                    <p className={`${ styles.subTitle } ${ styles.flyIn2 }`}>Natívna vývojová agentúra, pripravená na návrh, vytvárať a rozvíjať
+                    <p className={`${styles.subTitle} ${styles.flyIn2}`}>Natívna vývojová agentúra, pripravená na návrh, vytvárať a rozvíjať
                         softvérové aplikácie
                         svetovej úrovne.
                     </p>
@@ -73,7 +83,7 @@ function MainPage() {
                     <img src="/public/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg} />
                 </div>
             </div>
-            <div className={styles.sluzby}>
+            <div id="sluzby" className={`${ styles.sluzby } ${ styles.scrollContainer }`} ref={sluzbyRef}>
                 <h1 className={styles.sluzbyTitle}>Naše služby</h1>
                 <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
                 <div className={styles.sluzbyContainer}>
@@ -471,6 +481,20 @@ function MainPage() {
                     </div>
                 </div>
             </div>
+
+
+            <footer className={styles.footerParent}>
+                <div className={styles.footerChild}>
+                    <img src='/public/appkyLogoFooter.png' alt="Logo" className={styles.appkyLogoWhite} />
+                    <b className={styles.navBarTitle}>Appky</b>
+                    <div className={styles.footerCategories}>
+                        <a href="#" className={styles.category}>Služby</a>
+                        <a href="#" className={styles.category}>O nás</a>
+                        <a href="#" className={styles.category}>Postup</a>
+                    </div>
+                </div>
+
+            </footer>
 
 
         </div>
