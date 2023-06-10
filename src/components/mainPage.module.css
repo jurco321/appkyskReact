@@ -88,7 +88,7 @@
     background-size: contain 100%;
     background-position: left top;
     z-index: -1;
-    /* animation: breathingAnimation 10s infinite;*/
+    /*animation: breathingAnimation 10s infinite;*/
 }
 
 @keyframes breathingAnimation {
