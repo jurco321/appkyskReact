@@ -7,11 +7,7 @@ function MainPage() {
 
     const [scrolled, setScrolled] = useState(false);
 
-
     useEffect(() => {
-        console.log("useEffect in GetMenus");
-
-
 
         const getAllData = async () => {
             const docRef = doc(firestore, `mail`, `bWnMEOR3mFmWuroSOTbl`);
