@@ -1,11 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './mainPage.module.css';
-
-
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 function MainPage() {
 
     const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const sluzbyRef = useRef<HTMLDivElement>(null);
+    const ONasRef = useRef<HTMLDivElement>(null);
+    const postupRef = useRef<HTMLDivElement>(null);
+    const contactRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -21,14 +25,44 @@ function MainPage() {
 
     }, []);
 
-
-    const sluzbyRef = useRef<HTMLDivElement>(null); // Define the type for sluzbyRef
-
     const handleSluzbyClick = () => {
-        console.log(`handleSluzbyClick called`);
         if (sluzbyRef.current) {
-            sluzbyRef.current.scrollIntoView({ behavior: 'smooth' });
+            scroll.scrollTo(sluzbyRef.current.offsetTop, {
+                duration: 500,
+                smooth: 'easeInOutQuart',
+            });
         }
+    };
+
+    const handleONasClick = () => {
+        if (ONasRef.current) {
+            scroll.scrollTo(ONasRef.current.offsetTop, {
+                duration: 500,
+                smooth: 'easeInOutQuart',
+            });
+        }
+    };
+
+    const handlePostupClick = () => {
+        if (postupRef.current) {
+            scroll.scrollTo(postupRef.current.offsetTop, {
+                duration: 500,
+                smooth: 'easeInOutQuart',
+            });
+        }
+    };
+
+    const handleContactClick = () => {
+        if (contactRef.current) {
+            scroll.scrollTo(contactRef.current.offsetTop, {
+                duration: 500,
+                smooth: 'easeInOutQuart',
+            });
+        }
+    };
+
+    const handleMenuClick = () => {
+        setMenuOpen(!menuOpen);
     };
 
 
@@ -57,10 +91,11 @@ function MainPage() {
                 <div className={styles.topNavBar}>
                     <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo} />
                     <b className={styles.navBarTitle}>Appky</b>
-                    <a href="#sluzby" className={`${styles.navBarItem} ${styles.scrolled}`} onClick={handleSluzbyClick}>Služby</a>
-                    <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>O nás</a>
-                    <a href="#" className={`${styles.navBarItem} ${styles.scrolled}`}>Postup</a>
-                    <a href="#" className={`${styles.navBarItem} ${styles.scrolled} ${styles.navContactButton}`}>Kontaktujte nás</a>
+                    <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon} onClick={handleMenuClick} />
+                    <ScrollLink to="sluzby" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
+                    <ScrollLink to="onas" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true} duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
+                    <ScrollLink to="postup" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
+                    <ScrollLink to="contact" className={`${styles.navBarItem} ${styles.scrolled} ${styles.navContactButton}`} spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte nás</ScrollLink>
                 </div>
             </div>
             <div className={styles.header}>
@@ -77,13 +112,13 @@ function MainPage() {
                         <img src='/public/appDesignAndDevelopment.gif' alt="Animation"
                             className={styles.headerGifImgSmaller} />
                     </div>
-                    <button className={styles.headerButton}>Kontaktujte nás</button>
+                    <ScrollLink to="contact" className={styles.headerButton} spy={true} smooth={true} duration={1000} activeClass="none" onClick={handleContactClick}>Kontaktujte nás</ScrollLink>
                 </div>
                 <div className={styles.headerGif}>
                     <img src="/public/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg} />
                 </div>
             </div>
-            <div id="sluzby" className={`${ styles.sluzby } ${ styles.scrollContainer }`} ref={sluzbyRef}>
+            <div id="sluzby" className={`${styles.sluzby} ${styles.scrollContainer}`} ref={sluzbyRef}>
                 <h1 className={styles.sluzbyTitle}>Naše služby</h1>
                 <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
                 <div className={styles.sluzbyContainer}>
@@ -128,7 +163,7 @@ function MainPage() {
                     </div>
                 </div>
             </div>
-            <div className={styles.oNas}>
+            <div id="onas" className={`${ styles.oNas } ${ styles.scrollContainer }`} ref={ONasRef}>
                 <div className={styles.oNasBg2} />
                 <div className={styles.iconEllipseContainer}>
                     <img src="public/iconReact.svg" alt="IconReact" className={styles.iconBrandsLogo} />
@@ -157,7 +192,7 @@ function MainPage() {
                     Poďme vyvíjať ›
                 </a>
             </div>
-            <div className={styles.postup}>
+            <div id="postup" className={`${ styles.postup } ${ styles.scrollContainer }`} ref={postupRef}>
 
                 <h1 className={styles.postupTitle}>Ako to robíme my?</h1>
                 <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
@@ -422,7 +457,8 @@ function MainPage() {
             </div>
 
 
-            <div className={styles.Contact}>
+
+            <div id="contact" className={`${ styles.Contact } ${ styles.scrollContainer }`} ref={contactRef}>
 
                 <div className={styles.ContactMaxWidth}>
                     <h1 className={styles.ContactTitle}>Vytvorme spoločne úspešné aplikácie!</h1>
@@ -497,7 +533,7 @@ function MainPage() {
             </footer>
 
 
-        </div>
+        </div >
 
 
     );
