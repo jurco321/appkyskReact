@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from 'react';
 import styles from './mainPage.module.css';
 import {collection, addDoc, doc, getDoc} from 'firebase/firestore';
 import {firestore} from "../firebase/config";
-import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import {Link as ScrollLink, animateScroll as scroll} from 'react-scroll';
 
 function MainPage() {
 
@@ -69,9 +69,6 @@ function MainPage() {
 
 
     useEffect(() => {
-
-        const submitButton = document.getElementById("submitButton");
-
         const submitListener = () => {
 
             // Get the values from the input fields
@@ -94,24 +91,24 @@ function MainPage() {
                     subject: 'Kontakt z appky.sk!',
                     html: body,
                 },
-            }).then(() => {
-                alert('Váš email bol odoslaný. Ďakujeme.');
-
-                console.log("Data successfully written to Firestore!");
-                // Optionally, you can display a success message or redirect the user
             })
+                .then(() => {
+                    alert('Váš email bol odoslaný. Ďakujeme.');
+                    console.log("Data successfully written to Firestore!");
+                    // Optionally, you can display a success message or redirect the user
+                })
                 .catch((error: any) => {
                     console.error("Error writing document: ", error);
                     // Display an error message to the user
                 });
         };
 
+        const submitButton = document.getElementById("submitButton");
         submitButton?.addEventListener("click", submitListener);
 
         // Clean up the event listener when the component is unmounted
         return () => {
-            submitButton?.removeEventListener("click", () => {
-            });
+            submitButton?.removeEventListener("click", submitListener);
         };
     }, []);
 
@@ -131,17 +128,24 @@ function MainPage() {
                 href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
                 rel="stylesheet"></link>
 
-            <div className={`${styles.headerSvg} breathingAnimation `} />
-            <div className={`${styles.headerSvg2} breathingAnimation`} />
+            <div className={`${styles.headerSvg} breathingAnimation `}/>
+            <div className={`${styles.headerSvg2} breathingAnimation`}/>
             <div className={styles.topNavBarParent + (scrolled ? ' ' + styles.scrolled : '')}>
                 <div className={styles.topNavBar}>
-                    <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo} />
+                    <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo}/>
                     <b className={styles.navBarTitle}>Appky</b>
-                    <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon} onClick={handleMenuClick} />
-                    <ScrollLink to="sluzby" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
-                    <ScrollLink to="onas" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true} duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
-                    <ScrollLink to="postup" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
-                    <ScrollLink to="contact" className={`${styles.navBarItem} ${styles.scrolled} ${styles.navContactButton}`} spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte nás</ScrollLink>
+                    <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
+                         onClick={handleMenuClick}/>
+                    <ScrollLink to="sluzby" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true}
+                                smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
+                    <ScrollLink to="onas" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true}
+                                duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
+                    <ScrollLink to="postup" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true}
+                                smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
+                    <ScrollLink to="contact"
+                                className={`${styles.navBarItem} ${styles.scrolled} ${styles.navContactButton}`}
+                                spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
+                        nás</ScrollLink>
 
                 </div>
             </div>
@@ -152,7 +156,8 @@ function MainPage() {
                         používatelov a podporia
                         rast vášho podnikania</h1>
 
-                    <p className={`${styles.subTitle} ${styles.flyIn2}`}>Natívna vývojová agentúra, pripravená na návrh, vytvárať a rozvíjať
+                    <p className={`${styles.subTitle} ${styles.flyIn2}`}>Natívna vývojová agentúra, pripravená na návrh,
+                        vytvárať a rozvíjať
 
                         softvérové aplikácie
                         svetovej úrovne.
@@ -161,7 +166,8 @@ function MainPage() {
                         <img src='/public/appDesignAndDevelopment.gif' alt="Animation"
                              className={styles.headerGifImgSmaller}/>
                     </div>
-                    <ScrollLink to="contact" className={styles.headerButton} spy={true} smooth={true} duration={1000} activeClass="none" onClick={handleContactClick}>Kontaktujte nás</ScrollLink>
+                    <ScrollLink to="contact" className={styles.headerButton} spy={true} smooth={true} duration={1000}
+                                activeClass="none" onClick={handleContactClick}>Kontaktujte nás</ScrollLink>
                 </div>
                 <div className={styles.headerGif}>
                     <img src="/public/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg}/>
@@ -213,8 +219,8 @@ function MainPage() {
                 </div>
             </div>
 
-            <div id="onas" className={`${ styles.oNas } ${ styles.scrollContainer }`} ref={ONasRef}>
-                <div className={styles.oNasBg2} />
+            <div id="onas" className={`${styles.oNas} ${styles.scrollContainer}`} ref={ONasRef}>
+                <div className={styles.oNasBg2}/>
 
                 <div className={styles.iconEllipseContainer}>
                     <img src="public/iconReact.svg" alt="IconReact" className={styles.iconBrandsLogo}/>
@@ -243,7 +249,7 @@ function MainPage() {
                     Poďme vyvíjať ›
                 </a>
             </div>
-            <div id="postup" className={`${ styles.postup } ${ styles.scrollContainer }`} ref={postupRef}>
+            <div id="postup" className={`${styles.postup} ${styles.scrollContainer}`} ref={postupRef}>
 
                 <h1 className={styles.postupTitle}>Ako to robíme my?</h1>
                 <img className={styles.underLine} src="/public/underLine.svg" alt="Underline"/>
@@ -517,8 +523,7 @@ function MainPage() {
             </div>
 
 
-
-            <div id="contact" className={`${ styles.Contact } ${ styles.scrollContainer }`} ref={contactRef}>
+            <div id="contact" className={`${styles.Contact} ${styles.scrollContainer}`} ref={contactRef}>
 
                 <div className={styles.ContactMaxWidth}>
                     <h1 className={styles.ContactTitle}>Vytvorme spoločne úspešné aplikácie!</h1>
@@ -570,7 +575,8 @@ function MainPage() {
                                 <div className={styles.formFrom}>
                                     <label htmlFor='email' className={styles.labelText}>Povedzte nám o Vašom
                                         projekte!</label>
-                                    <input type="text" id="oprojekte" name="oprojekte" className={styles.borderBoxLarge}/>
+                                    <input type="text" id="oprojekte" name="oprojekte"
+                                           className={styles.borderBoxLarge}/>
                                 </div>
                             </div>
                             <div className={styles.sendButton}>
@@ -585,7 +591,7 @@ function MainPage() {
 
             <footer className={styles.footerParent}>
                 <div className={styles.footerChild}>
-                    <img src='/public/appkyLogoFooter.png' alt="Logo" className={styles.appkyLogoWhite} />
+                    <img src='/public/appkyLogoFooter.png' alt="Logo" className={styles.appkyLogoWhite}/>
                     <b className={styles.navBarTitle}>Appky</b>
                     <div className={styles.footerCategories}>
                         <a href="#" className={styles.category}>Služby</a>
@@ -597,7 +603,7 @@ function MainPage() {
             </footer>
 
 
-        </div >
+        </div>
 
 
     );

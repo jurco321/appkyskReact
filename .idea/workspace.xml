@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c2c19c6-945d-4001-8297-3433668c676f" name="Changes" comment="adding firebase config">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainPage.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,7 +64,7 @@
       <workItem from="1686500769051" duration="680000" />
       <workItem from="1686588468276" duration="245000" />
       <workItem from="1686674257815" duration="39000" />
-      <workItem from="1686674469318" duration="1485000" />
+      <workItem from="1686674469318" duration="1733000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring to react, next part">
       <created>1685881982022</created>
