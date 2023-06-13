@@ -72,16 +72,36 @@ function MainPage() {
         const submitListener = () => {
 
             // Get the values from the input fields
+            const menoElement = document.getElementById("meno") as HTMLInputElement | null;
+            const meno = menoElement?.value ?? '';
+
             const emailElement = document.getElementById("email") as HTMLInputElement | null;
             const email = emailElement?.value ?? '';
+
+            const mobilElement = document.getElementById("mobil") as HTMLInputElement | null;
+            const mobil = mobilElement?.value ?? '';
 
             const textElement = document.getElementById("text") as HTMLInputElement | null;
             const text = textElement?.value ?? '';
 
+            const dozvedelisaElement = document.getElementById("dozvedelisa") as HTMLInputElement | null;
+            const dozvedelisa = dozvedelisaElement?.value ?? '';
+
             const oprojekteElement = document.getElementById("oprojekte") as HTMLInputElement | null;
             const oprojekte = oprojekteElement?.value ?? '';
 
-            const body = "Ako Vám môžeme pomôcť : <br/> " + text + "<br/> ---<br/><br/> O projekte : <br/> " + oprojekte;
+            const body = "Meno : <br/> "
+                + meno
+                + "<br/> ---<br/><br/> Email : <br/> "
+                + email
+                + "<br/> ---<br/><br/> Mobil : <br/> "
+                + mobil
+                + "<br/> ---<br/><br/> Ako Vám môžeme pomôcť : <br/> "
+                + text
+                + "<br/> ---<br/><br/> Ako ste sa o nás dozvedeli : <br/> "
+                + dozvedelisa
+                + "<br/> ---<br/><br/> O projekte : <br/> "
+                + oprojekte;
 
             // Add a new document with the user-submitted data
             const mailCollection = collection(firestore, 'mail');
@@ -542,7 +562,7 @@ function MainPage() {
                             <div className={styles.menoemail}>
                                 <div className={styles.formMeno}>
                                     <label htmlFor="name" className={styles.labelText}>Meno</label>
-                                    <input type="text" id="name" name="name" className={styles.borderBox}/>
+                                    <input type="text" id="meno" name="meno" className={styles.borderBox}/>
                                 </div>
                                 <div className={styles.formEmail}>
                                     <label htmlFor='email' className={styles.labelText}>E-mail</label>
@@ -553,7 +573,7 @@ function MainPage() {
                                 <div className={styles.menoemail}>
                                     <div className={styles.formMobil}>
                                         <label htmlFor="name" className={styles.labelText}>Mobil (nepovinné)</label>
-                                        <input type="text" id="name" name="name" className={styles.borderBox}/>
+                                        <input type="text" id="mobil" name="mobil" className={styles.borderBox}/>
                                     </div>
                                     <div className={styles.formHelp}>
                                         <label htmlFor='email' className={styles.labelText}>Ako Vám môžeme
@@ -567,7 +587,7 @@ function MainPage() {
                                 <div className={styles.formFrom}>
                                     <label htmlFor='email' className={styles.labelText}>Ako ste sa o nás
                                         dozvedeli?</label>
-                                    <input type="text" id="name" name="name" className={styles.borderBox}/>
+                                    <input type="text" id="dozvedelisa" name="dozvedelisa" className={styles.borderBox}/>
                                 </div>
                             </div>
 
