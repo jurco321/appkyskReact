@@ -8,20 +8,6 @@ function MainPage() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
-
-        const getAllData = async () => {
-            const docRef = doc(firestore, `mail`, `bWnMEOR3mFmWuroSOTbl`);
-            const targetDoc = await getDoc(docRef);
-            console.log("targetDoc.data() : ", targetDoc.data());
-            return { data: targetDoc.data() };
-        };
-
-        getAllData();
-    }, []);
-
-
-
-    useEffect(() => {
         const handleScroll = () => {
             const isScrolled = window.scrollY > 0;
             setScrolled(isScrolled);
