@@ -81,18 +81,21 @@ function MainPage() {
             const textElement = document.getElementById("text") as HTMLInputElement | null;
             const text = textElement?.value ?? '';
 
-            alert('sending email to : ' + email + ' with text : ' + text);
+            const oprojekteElement = document.getElementById("oprojekte") as HTMLInputElement | null;
+            const oprojekte = oprojekteElement?.value ?? '';
+
+            const body = "Ako Vám môžeme pomôcť : <br/> " + text + "<br/> ---<br/><br/> O projekte : <br/> " + oprojekte;
 
             // Add a new document with the user-submitted data
             const mailCollection = collection(firestore, 'mail');
             addDoc(mailCollection, {
                 to: email,
                 message: {
-                    subject: 'Hello from Firebase!',
-                    html: text,
+                    subject: 'Kontakt z appky.sk!',
+                    html: body,
                 },
             }).then(() => {
-                alert('MAIL DONE @ ');
+                alert('Váš email bol odoslaný. Ďakujeme.');
 
                 console.log("Data successfully written to Firestore!");
                 // Optionally, you can display a success message or redirect the user
@@ -567,7 +570,7 @@ function MainPage() {
                                 <div className={styles.formFrom}>
                                     <label htmlFor='email' className={styles.labelText}>Povedzte nám o Vašom
                                         projekte!</label>
-                                    <input type="text" id="name" name="name" className={styles.borderBoxLarge}/>
+                                    <input type="text" id="oprojekte" name="oprojekte" className={styles.borderBoxLarge}/>
                                 </div>
                             </div>
                             <div className={styles.sendButton}>

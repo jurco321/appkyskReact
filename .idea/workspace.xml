@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c2c19c6-945d-4001-8297-3433668c676f" name="Changes" comment="adding firebase config">
-      <change afterPath="$PROJECT_DIR$/.firebase/hosting.cHVibGlj.cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.firebaserc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firestore.indexes.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firestore.rules" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/appDesignAndDevelopment.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/appDesignAndDevelopment.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/appkyLogo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/backHeader.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/curveHeader.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/header.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/iconEllipse.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/mobilneApps.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/oNasBg.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/oNasBg2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/reactNative.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/uiuxApps.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/underLine.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/weboveApps.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/mainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/firebase/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +65,7 @@
       <workItem from="1686500769051" duration="680000" />
       <workItem from="1686588468276" duration="245000" />
       <workItem from="1686674257815" duration="39000" />
-      <workItem from="1686674469318" duration="483000" />
+      <workItem from="1686674469318" duration="1485000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring to react, next part">
       <created>1685881982022</created>
