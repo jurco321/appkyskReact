@@ -114,6 +114,7 @@ function MainPage() {
             const mailCollection = collection(firestore, 'mail');
             addDoc(mailCollection, {
                 to: emailTo,
+                replyTo: email,
                 message: {
                     subject: 'Kontakt z appky.sk!',
                     html: body,
