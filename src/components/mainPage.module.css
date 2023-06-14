@@ -115,7 +115,7 @@
     border-bottom-right-radius: 24px;
     z-index: 100;
 
-    transition: background-color 0.6s ease;
+    transition: background-color 1s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .topNavBarParent.scrolled {
@@ -165,12 +165,21 @@
     line-height: 27px;
     cursor: pointer;
 
-    transition: transform 0.6s;
+    transition: transform 0.1s, background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+@keyframes fillFromLeft {
+    to {
+        background-position: 0% 0%;
+    }
+}
+
 
 .navBarItem:hover {
     text-decoration: none;
     transform: scale(1.1);
+    animation: fillFromLeft 1s forwards cubic-bezier(0.4, 0, 0.2, 1);
+    color: #29208B;
 }
 
 @media (min-width: 697px) {
