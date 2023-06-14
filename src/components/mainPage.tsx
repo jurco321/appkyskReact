@@ -6,6 +6,8 @@ import {Link as ScrollLink, animateScroll as scroll} from 'react-scroll';
 
 function MainPage() {
 
+    const emailTo = "hello@appky.sk";
+
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
     const sluzbyRef = useRef<HTMLDivElement>(null);
@@ -106,7 +108,7 @@ function MainPage() {
             // Add a new document with the user-submitted data
             const mailCollection = collection(firestore, 'mail');
             addDoc(mailCollection, {
-                to: email,
+                to: emailTo,
                 message: {
                     subject: 'Kontakt z appky.sk!',
                     html: body,
