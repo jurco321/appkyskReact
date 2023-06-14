@@ -9,11 +9,14 @@ function MainPage() {
     const emailTo = "hello@appky.sk";
 
     const [scrolled, setScrolled] = useState(false);
+
     const [menuOpen, setMenuOpen] = useState(false);
+
     const sluzbyRef = useRef<HTMLDivElement>(null);
     const ONasRef = useRef<HTMLDivElement>(null);
     const postupRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
+
 
     useEffect(() => {
         const handleScroll = () => {
@@ -68,6 +71,8 @@ function MainPage() {
     const handleMenuClick = () => {
         setMenuOpen(!menuOpen);
     };
+
+    
 
 
     useEffect(() => {

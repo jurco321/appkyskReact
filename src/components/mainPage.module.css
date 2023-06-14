@@ -113,6 +113,7 @@
     top: 0;
     border-bottom-left-radius: 24px;
     border-bottom-right-radius: 24px;
+    z-index: 100;
 
     transition: background-color 0.6s ease;
 }
@@ -171,12 +172,12 @@
     text-decoration: none;
     transform: scale(1.1);
 }
-  
-  @media (min-width: 697px) {
+
+@media (min-width: 697px) {
     .menuIcon {
-      display: none;
+        display: none;
     }
-  }
+}
 
 .navContactButton {
     box-sizing: border-box;
@@ -264,9 +265,12 @@
 
 .headerButton {
     padding: 12px 0px 12px 0px;
-    background: #FFFFFF;
+    background: linear-gradient(to right, transparent 50%, #FFFFFF 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0%;
+    transition: transform 0.6s, background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 25px;
-    max-width: 205.02px;
+    width: 205.02px;
     border: none;
     margin-top: 0px;
 
@@ -278,12 +282,16 @@
     align-items: center;
     text-align: center;
     color: #654ACE;
-    transition: transform 0.6s;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s;
     cursor: pointer;
 
     z-index: 1;
+}
+
+@keyframes fillFromLeft {
+    to {
+        background-position: 0% 0%;
+    }
 }
 
 .headerButton:hover {
@@ -292,6 +300,7 @@
 
     text-decoration: none;
     color: #FFFFFF;
+    animation: fillFromLeft 1s forwards cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media (max-width: 1092px) {
@@ -1237,10 +1246,16 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transform-style: preserve-3d;
+
+    cursor: pointer;
 }
 
 .sendButtonStyle:hover {
     transform: scale(1.1);
+    transform-origin: center;
     transition: transform 0.6s;
 }
 
