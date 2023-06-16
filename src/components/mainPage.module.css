@@ -168,6 +168,10 @@
     transition: transform 0.1s, background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.navBarItem.navBarItemMobile {
+    display: block;
+}
+
 .navBarItem {
     margin-left: 30px;
     text-decoration: none;
@@ -221,6 +225,10 @@
     text-decoration: none;
     animation: fillFromLeft 1s forwards cubic-bezier(0.4, 0, 0.2, 1);
     color: #FDFDFD;
+}
+
+.menuIcon {
+    cursor: pointer;
 }
 
 @media (min-width: 697px) {

@@ -10,7 +10,7 @@ function MainPage() {
 
     const [scrolled, setScrolled] = useState(false);
 
-    const [menuOpen, setMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
 
     const sluzbyRef = useRef<HTMLDivElement>(null);
     const ONasRef = useRef<HTMLDivElement>(null);
@@ -68,8 +68,8 @@ function MainPage() {
         }
     };
 
-    const handleMenuClick = () => {
-        setMenuOpen(!menuOpen);
+    const mobileMenu = () => {
+        setIsOpen((open) => !open);
     };
 
 
@@ -161,12 +161,15 @@ function MainPage() {
                     <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo} />
                     <b className={styles.navBarTitle}>Appky</b>
                     <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
-                        onClick={handleMenuClick} />
-                    <ScrollLink to="sluzby" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true}
+                        onClick={mobileMenu} />
+                    <ScrollLink to="sluzby"
+                        className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
                         smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
-                    <ScrollLink to="onas" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true}
+                    <ScrollLink to="onas" 
+                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true} smooth={true}
                         duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
-                    <ScrollLink to="postup" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true}
+                    <ScrollLink to="postup" 
+                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
                         smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
                     <ScrollLink to="contact"
                         className={`${styles.navBarItemButton} ${styles.scrolled} ${styles.navContactButton}`}
