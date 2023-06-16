@@ -145,13 +145,27 @@
 }
 
 .navBarTitle {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 800;
+    font-family: 'Righteous';
+    font-weight: 400px;
     font-size: 18px;
     line-height: 27px;
     margin-right: auto;
     color: #FFFFFF;
+}
+
+.navBarItemButton {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 27px;
+    cursor: pointer;
+    position: relative;
+
+    transition: transform 0.1s, background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .navBarItem {
@@ -164,22 +178,49 @@
     font-size: 18px;
     line-height: 27px;
     cursor: pointer;
+    position: relative;
 
     transition: transform 0.1s, background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes fillFromLeft {
-    to {
+    0% {
         background-position: 0% 0%;
     }
+
+    50% {
+        background-position: 100% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+.navBarItem::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    /* Adjust this value to control the distance from the text */
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #FDFDFD;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navBarItem:hover::after {
+    width: 50%;
+    /* Adjust this value to control the length of the underline */
+    transition-delay: 0.1s;
+    /* Add this line to delay the start of the underline animation */
 }
 
 
 .navBarItem:hover {
     text-decoration: none;
-    transform: scale(1.1);
     animation: fillFromLeft 1s forwards cubic-bezier(0.4, 0, 0.2, 1);
-    color: #29208B;
+    color: #FDFDFD;
 }
 
 @media (min-width: 697px) {
@@ -380,7 +421,8 @@
 }
 
 @media (max-width: 697px) {
-    .navBarItem {
+    .navBarItem,
+    .navBarItemButton {
         display: none;
     }
 
@@ -1290,6 +1332,10 @@ input {
     box-sizing: border-box;
     border-width: 1px;
     border-color: #C4C4C4;
+    vertical-align: top;
+    padding-bottom: 150px;
+
+
 }
 
 

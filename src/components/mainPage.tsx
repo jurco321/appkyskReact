@@ -1,8 +1,8 @@
-import React, {useEffect, useState, useRef} from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './mainPage.module.css';
-import {collection, addDoc, doc, getDoc} from 'firebase/firestore';
-import {firestore} from "../firebase/config";
-import {Link as ScrollLink, animateScroll as scroll} from 'react-scroll';
+import { collection, addDoc, doc, getDoc } from 'firebase/firestore';
+import { firestore } from "../firebase/config";
+import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 function MainPage() {
 
@@ -72,7 +72,7 @@ function MainPage() {
         setMenuOpen(!menuOpen);
     };
 
-    
+
 
 
     useEffect(() => {
@@ -152,27 +152,25 @@ function MainPage() {
                 href="https://fonts.gstatic.com"
                 crossOrigin=""
             />
-            <link
-                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap"
-                rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet"></link>
 
-            <div className={`${styles.headerSvg} breathingAnimation `}/>
-            <div className={`${styles.headerSvg2} breathingAnimation`}/>
+            <div className={`${styles.headerSvg} breathingAnimation `} />
+            <div className={`${styles.headerSvg2} breathingAnimation`} />
             <div className={styles.topNavBarParent + (scrolled ? ' ' + styles.scrolled : '')}>
                 <div className={styles.topNavBar}>
-                    <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo}/>
+                    <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo} />
                     <b className={styles.navBarTitle}>Appky</b>
                     <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
-                         onClick={handleMenuClick}/>
+                        onClick={handleMenuClick} />
                     <ScrollLink to="sluzby" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true}
-                                smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
+                        smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
                     <ScrollLink to="onas" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true} smooth={true}
-                                duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
+                        duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
                     <ScrollLink to="postup" className={`${styles.navBarItem} ${styles.scrolled}`} spy={true}
-                                smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
+                        smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
                     <ScrollLink to="contact"
-                                className={`${styles.navBarItem} ${styles.scrolled} ${styles.navContactButton}`}
-                                spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
+                        className={`${styles.navBarItemButton} ${styles.scrolled} ${styles.navContactButton}`}
+                        spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
                         nás</ScrollLink>
 
                 </div>
@@ -192,21 +190,21 @@ function MainPage() {
                     </p>
                     <div className={styles.headerGifSmaller}>
                         <img src='/public/appDesignAndDevelopment.gif' alt="Animation"
-                             className={styles.headerGifImgSmaller}/>
+                            className={styles.headerGifImgSmaller} />
                     </div>
                     <ScrollLink to="contact" className={styles.headerButton} spy={true} smooth={true} duration={1000}
-                                activeClass="none" onClick={handleContactClick}>Kontaktujte nás</ScrollLink>
+                        activeClass="none" onClick={handleContactClick}>Kontaktujte nás</ScrollLink>
                 </div>
                 <div className={styles.headerGif}>
-                    <img src="/public/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg}/>
+                    <img src="/public/appDesignAndDevelopment.gif" alt="Animation" className={styles.headerGifImg} />
                 </div>
             </div>
             <div id="sluzby" className={`${styles.sluzby} ${styles.scrollContainer}`} ref={sluzbyRef}>
                 <h1 className={styles.sluzbyTitle}>Naše služby</h1>
-                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline"/>
+                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
                 <div className={styles.sluzbyContainer}>
                     <div className={styles.mobilneApps}>
-                        <img src="/public/mobilneApps.svg" alt='mobilneApps' className={styles.beruska}/>
+                        <img src="/public/mobilneApps.svg" alt='mobilneApps' className={styles.beruska} />
                         <h2 className={styles.mobilneAppsTitle}>Vývoj
                             mobilných aplikácií
                         </h2>
@@ -220,7 +218,7 @@ function MainPage() {
                         </a>
                     </div>
                     <div className={styles.weboveApps}>
-                        <img src="/public/weboveApps.svg" alt='weboveApps' className={styles.beruska}/>
+                        <img src="/public/weboveApps.svg" alt='weboveApps' className={styles.beruska} />
                         <h2 className={styles.weboveAppsTitle}>Vývoj
                             webových aplikácií
                         </h2>
@@ -234,7 +232,7 @@ function MainPage() {
                         </a>
                     </div>
                     <div className={styles.uiuxApps}>
-                        <img src="public/uiuxApps.svg" alt='uiuxApps' className={styles.beruska}/>
+                        <img src="public/uiuxApps.svg" alt='uiuxApps' className={styles.beruska} />
                         <h2 className={styles.uiuxAppsTitle}>UI / UX Dizajn</h2>
                         <p className={styles.uiuxAppsSubTitle}>
                             S veľkou vášňou sa venujeme tvorbe nádherných a praktických používateľských rozhraní, ktoré
@@ -248,17 +246,17 @@ function MainPage() {
             </div>
 
             <div id="onas" className={`${styles.oNas} ${styles.scrollContainer}`} ref={ONasRef}>
-                <div className={styles.oNasBg2}/>
+                <div className={styles.oNasBg2} />
 
                 <div className={styles.iconEllipseContainer}>
-                    <img src="public/iconReact.svg" alt="IconReact" className={styles.iconBrandsLogo}/>
-                    <img src="public/iconFirebase.svg" alt="IconFirebase" className={styles.iconBrandsLogo}/>
-                    <img src="public/iconAndroid.svg" alt="IconAndroid" className={styles.iconBrandsLogo}/>
-                    <img src="public/iconGithub.svg" alt="IconGithub" className={styles.iconBrandsLogo}/>
-                    <img src="public/iconJava.svg" alt="IconJava" className={styles.iconBrandsLogo}/>
-                    <img src="public/iconFigma.svg" alt="IconFigma" className={styles.iconBrandsLogo}/>
-                    <img src="public/iconApple.svg" alt="IconApple" className={styles.iconBrandsLogo}/>
-                    <img src="public/iconNode.svg" alt="IconNode" className={styles.iconBrandsLogo}/>
+                    <img src="public/iconReact.svg" alt="IconReact" className={styles.iconBrandsLogo} />
+                    <img src="public/iconFirebase.svg" alt="IconFirebase" className={styles.iconBrandsLogo} />
+                    <img src="public/iconAndroid.svg" alt="IconAndroid" className={styles.iconBrandsLogo} />
+                    <img src="public/iconGithub.svg" alt="IconGithub" className={styles.iconBrandsLogo} />
+                    <img src="public/iconJava.svg" alt="IconJava" className={styles.iconBrandsLogo} />
+                    <img src="public/iconFigma.svg" alt="IconFigma" className={styles.iconBrandsLogo} />
+                    <img src="public/iconApple.svg" alt="IconApple" className={styles.iconBrandsLogo} />
+                    <img src="public/iconNode.svg" alt="IconNode" className={styles.iconBrandsLogo} />
                 </div>
                 <h2 className={styles.oNasTitle}>
                     Prečo si na vytváranie krásnych aplikácií vybrať Appky?
@@ -280,7 +278,7 @@ function MainPage() {
             <div id="postup" className={`${styles.postup} ${styles.scrollContainer}`} ref={postupRef}>
 
                 <h1 className={styles.postupTitle}>Ako to robíme my?</h1>
-                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline"/>
+                <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
                 <div className={styles.cards}>
 
                     <div className={styles.postup1Container}>
@@ -291,7 +289,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup1SubTitle}>
                                     Zistíme o Vašich <span
-                                    className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                        className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
                                 </span>
                             </div>
                         </div>
@@ -335,7 +333,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup1SubTitle}>
                                     Zistíme o Vašich <span
-                                    className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                        className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
                                 </span>
                             </div>
                         </div>
@@ -394,7 +392,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup1SubTitle}>
                                     Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span
-                                    className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                        className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
                                 </span>
                             </div>
                         </div>
@@ -408,7 +406,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup2SubTitle}>
                                     Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span
-                                    className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                        className={styles.specialText}>generovali pozitívny vplyv.</span>
                                 </span>
                             </div>
                         </div>
@@ -426,7 +424,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup1SubTitle}>
                                     Zistíme o Vašich <span
-                                    className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
+                                        className={styles.specialText}>potrebách a požiadavkách,</span> či už pri príjemnej káve, online stretnutí alebo iným spôsobom.
                                 </span>
                             </div>
                         </div>
@@ -479,7 +477,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup2SubTitle}>
                                     Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span
-                                    className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                        className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
                                 </span>
                             </div>
                         </div>
@@ -493,7 +491,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup2SubTitle}>
                                     Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span
-                                    className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                        className={styles.specialText}>generovali pozitívny vplyv.</span>
                                 </span>
                             </div>
                         </div>
@@ -526,7 +524,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup2SubTitle}>
                                     Pomocou nových technológií vyvíjame <span className={styles.specialText}>funkčné softvérové produkty,</span> ktoré sú <span
-                                    className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
+                                        className={styles.specialText}>schopné rásť spolu s vaším podnikaním.</span>
                                 </span>
                             </div>
                         </div>
@@ -540,7 +538,7 @@ function MainPage() {
                                 </div>
                                 <span className={styles.postup3SubTitle}>
                                     Hurá! Spúšťame váš produkt, vyhodnocujeme ho a neustále iterujeme, aby sme <span
-                                    className={styles.specialText}>generovali pozitívny vplyv.</span>
+                                        className={styles.specialText}>generovali pozitívny vplyv.</span>
                                 </span>
                             </div>
                         </div>
@@ -555,11 +553,11 @@ function MainPage() {
 
                 <div className={styles.ContactMaxWidth}>
                     <h1 className={styles.ContactTitle}>Vytvorme spoločne úspešné aplikácie!</h1>
-                    <img className={styles.underLine} src="/public/underLine.svg" alt="Underline"/>
+                    <img className={styles.underLine} src="/public/underLine.svg" alt="Underline" />
 
                     <div className={styles.formular}>
                         <div className={styles.me}>
-                            <img src='/public/me.png' alt='mePhoto'/>
+                            <img src='/public/me.png' alt='mePhoto' />
                             <span className={styles.meTitle}>Kontaktujte nás</span>
                             <span className={styles.meSubTitle}>Ahoj, volám sa Juraj, manažér pre rozvoj podnikania pre spoločnosť Appky s.r.o. Rád by som s Vami prebral Váš projekt a Vaše potreby. </span>
                             <span className={styles.meSubTitle}>Vyplňte formulár alebo nám pošlite email na <span
@@ -570,23 +568,23 @@ function MainPage() {
                             <div className={styles.menoemail}>
                                 <div className={styles.formMeno}>
                                     <label htmlFor="name" className={styles.labelText}>Meno</label>
-                                    <input type="text" id="meno" name="meno" className={styles.borderBox}/>
+                                    <input type="text" id="meno" name="meno" className={styles.borderBox} />
                                 </div>
                                 <div className={styles.formEmail}>
                                     <label htmlFor='email' className={styles.labelText}>E-mail</label>
-                                    <input type="text" id="email" name="email" className={styles.borderBox}/>
+                                    <input type="text" id="email" name="email" className={styles.borderBox} />
                                 </div>
                             </div>
                             <div className={styles.mobilpomoc}>
                                 <div className={styles.menoemail}>
                                     <div className={styles.formMobil}>
                                         <label htmlFor="name" className={styles.labelText}>Mobil (nepovinné)</label>
-                                        <input type="text" id="mobil" name="mobil" className={styles.borderBox}/>
+                                        <input type="text" id="mobil" name="mobil" className={styles.borderBox} />
                                     </div>
                                     <div className={styles.formHelp}>
                                         <label htmlFor='email' className={styles.labelText}>Ako Vám môžeme
                                             pomôcť?</label>
-                                        <input type="text" id="text" name="text" className={styles.borderBox}/>
+                                        <input type="text" id="text" name="text" className={styles.borderBox} />
                                     </div>
                                 </div>
                             </div>
@@ -595,7 +593,7 @@ function MainPage() {
                                 <div className={styles.formFrom}>
                                     <label htmlFor='email' className={styles.labelText}>Ako ste sa o nás
                                         dozvedeli?</label>
-                                    <input type="text" id="dozvedelisa" name="dozvedelisa" className={styles.borderBox}/>
+                                    <input type="text" id="dozvedelisa" name="dozvedelisa" className={styles.borderBox} />
                                 </div>
                             </div>
 
@@ -604,7 +602,7 @@ function MainPage() {
                                     <label htmlFor='email' className={styles.labelText}>Povedzte nám o Vašom
                                         projekte!</label>
                                     <input type="text" id="oprojekte" name="oprojekte"
-                                           className={styles.borderBoxLarge}/>
+                                        className={styles.borderBoxLarge} />
                                 </div>
                             </div>
                             <div className={styles.sendButton}>
@@ -619,7 +617,7 @@ function MainPage() {
 
             <footer className={styles.footerParent}>
                 <div className={styles.footerChild}>
-                    <img src='/public/appkyLogoFooter.png' alt="Logo" className={styles.appkyLogoWhite}/>
+                    <img src='/public/appkyLogoFooter.png' alt="Logo" className={styles.appkyLogoWhite} />
                     <b className={styles.navBarTitle}>Appky</b>
                     <div className={styles.footerCategories}>
                         <a href="#" className={styles.category}>Služby</a>
