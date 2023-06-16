@@ -341,15 +341,13 @@
 @keyframes fillFromLeft {
     to {
         background-position: 0% 0%;
+        color: #FFFFFF;
     }
 }
 
 .headerButton:hover {
-    transform: scale(1.1);
     background-color: #29208B;
-
     text-decoration: none;
-    color: #FFFFFF;
     animation: fillFromLeft 1s forwards cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -421,6 +419,7 @@
 }
 
 @media (max-width: 697px) {
+
     .navBarItem,
     .navBarItemButton {
         display: none;
