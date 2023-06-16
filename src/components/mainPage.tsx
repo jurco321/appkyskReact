@@ -152,7 +152,7 @@ function MainPage() {
                 href="https://fonts.gstatic.com"
                 crossOrigin=""
             />
-            <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&family=Righteous&display=swap" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
 
             <div className={`${styles.headerSvg} breathingAnimation `} />
             <div className={`${styles.headerSvg2} breathingAnimation`} />
@@ -165,11 +165,11 @@ function MainPage() {
                     <ScrollLink to="sluzby"
                         className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
                         smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
-                    <ScrollLink to="onas" 
-                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true} smooth={true}
+                    <ScrollLink to="onas"
+                        className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true} smooth={true}
                         duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
-                    <ScrollLink to="postup" 
-                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
+                    <ScrollLink to="postup"
+                        className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
                         smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
                     <ScrollLink to="contact"
                         className={`${styles.navBarItemButton} ${styles.scrolled} ${styles.navContactButton}`}
