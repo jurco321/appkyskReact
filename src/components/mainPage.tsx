@@ -641,11 +641,11 @@ function MainPage() {
 
                         <div className={styles.containerData}>
                             <div className={styles.contactMobil}>
-                                <img src='./public/mobileContact.svg' className={styles.mobileContactSvg}></img>
+                                <img src='./public/mobilecontact.svg' className={styles.mobileContactSvg}></img>
                                 <p className={styles.footerText}>+421 911 892 703</p>
                             </div>
                             <div className={styles.contactMobil}>
-                                <img src='./public/emailContact.svg' className={styles.mobileContactSvg}></img>
+                                <img src='./public/emailcontact.svg' className={styles.mobileContactSvg}></img>
                                 <p className={styles.footerText}>hello@appky.sk</p>
                             </div>
                             <p className={styles.footerTextAddress}>Appky, s.r.o.</p>
