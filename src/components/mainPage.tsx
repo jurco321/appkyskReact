@@ -620,12 +620,38 @@ function MainPage() {
 
             <footer className={styles.footerParent}>
                 <div className={styles.footerChild}>
-                    <img src='/public/appkyLogoFooter.png' alt="Logo" className={styles.appkyLogoWhite} />
-                    <b className={styles.navBarTitle}>Appky</b>
+                    <div className={styles.footerLogoDiv}>
+                        <img src='/public/appkyLogoFooter.png' alt="Logo" className={styles.appkyLogoWhite} />
+                        <b className={styles.footerBarTitle}>Appky</b>
+                    </div>
+                    <ScrollLink to="sluzby"
+                        className={styles.categoryMobile} spy={true}
+                        smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
+                    <ScrollLink to="onas"
+                        className={styles.categoryMobile} spy={true} smooth={true}
+                        duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
+                    <ScrollLink to="postup"
+                        className={styles.categoryMobile} spy={true}
+                        smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
                     <div className={styles.footerCategories}>
-                        <a href="#" className={styles.category}>Služby</a>
-                        <a href="#" className={styles.category}>O nás</a>
-                        <a href="#" className={styles.category}>Postup</a>
+                        <ScrollLink to="contact" className={styles.category} spy={true}
+                        smooth={true} duration={1000} onClick={handleContactClick}>Kontakt</ScrollLink>
+
+
+
+                        <div className={styles.containerData}>
+                            <div className={styles.contactMobil}>
+                                <img src='./public/mobileContact.svg' className={styles.mobileContactSvg}></img>
+                                <p className={styles.footerText}>+421 911 892 703</p>
+                            </div>
+                            <div className={styles.contactMobil}>
+                                <img src='./public/emailContact.svg' className={styles.mobileContactSvg}></img>
+                                <p className={styles.footerText}>hello@appky.sk</p>
+                            </div>
+                            <p className={styles.footerTextAddress}>Appky, s.r.o.</p>
+                            <p className={styles.footerTextAddress}>Do Žlebín 5048/3</p>
+                            <p className={styles.footerTextAddress}>034 01 Ružomberok</p>
+                        </div>
                     </div>
                 </div>
 
