@@ -195,14 +195,14 @@ function MainPage() {
                 href="https://fonts.gstatic.com"
                 crossOrigin=""
             />
-            <link href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
+            <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"></link>
 
             <div className={`${styles.headerSvg} breathingAnimation `} />
             <div className={`${styles.headerSvg2} breathingAnimation`} />
             <div className={styles.topNavBarParent + (scrolled ? ' ' + styles.scrolled : '')}>
                 <div className={styles.topNavBar}>
                     <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo} />
-                    <b className={styles.navBarTitle}>Appky</b>
+                    <b className={styles.navBarTitle}>appky</b>
                     <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
                         onClick={mobileMenu} />
                     <ScrollLink to="sluzby"
@@ -669,7 +669,7 @@ function MainPage() {
                 <div className={styles.footerChild}>
                     <div className={styles.footerLogoDiv}>
                         <img src='/public/appkyLogoFooter.png' alt="Logo" className={styles.appkyLogoWhite} />
-                        <b className={styles.footerBarTitle}>Appky</b>
+                        <b className={styles.footerBarTitle}>appky</b>
                     </div>
                     <ScrollLink to="sluzby"
                         className={styles.categoryMobile} spy={true}
@@ -682,7 +682,7 @@ function MainPage() {
                         smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
                     <div className={styles.footerCategories}>
                         <ScrollLink to="contact" className={styles.category} spy={true}
-                        smooth={true} duration={1000} onClick={handleContactClick}>Kontakt</ScrollLink>
+                            smooth={true} duration={1000} onClick={handleContactClick}>Kontakt</ScrollLink>
 
 
 
