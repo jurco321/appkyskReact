@@ -201,23 +201,32 @@ function MainPage() {
             <div className={`${styles.headerSvg2} breathingAnimation`} />
             <div className={styles.topNavBarParent + (scrolled ? ' ' + styles.scrolled : '')}>
                 <div className={styles.topNavBar}>
+
                     <img src='/public/appkyLogoWhite.png' alt="Logo" className={styles.appkyLogo} />
+
                     <b className={styles.navBarTitle}>appky</b>
-                    <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
-                        onClick={mobileMenu} />
-                    <ScrollLink to="sluzby"
-                        className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
-                        smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
-                    <ScrollLink to="onas"
-                        className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true} smooth={true}
-                        duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
-                    <ScrollLink to="postup"
-                        className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
-                        smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
-                    <ScrollLink to="contact"
-                        className={`${styles.navBarItemButton} ${styles.scrolled} ${styles.navContactButton}`}
-                        spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
-                        nás</ScrollLink>
+
+                    <div className={styles.navBarLinks}>
+                        <div style={{display: "flex", justifyContent: "flex-end"}}>
+                        <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
+                             onClick={mobileMenu} />
+                        </div>
+                        <ScrollLink to="sluzby"
+                                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
+                                    smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
+                        <ScrollLink to="onas"
+                                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true} smooth={true}
+                                    duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
+                        <ScrollLink to="postup"
+                                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
+                                    smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
+                        <ScrollLink to="contact"
+                                    className={`${styles.navBarItemButton} ${styles.scrolled} ${styles.navContactButton}`}
+                                    spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
+                            nás</ScrollLink>
+                    </div>
+
+
 
                 </div>
             </div>
