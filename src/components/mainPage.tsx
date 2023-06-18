@@ -72,62 +72,98 @@ function MainPage() {
         setIsOpen((open) => !open);
     };
 
+    const [formData, setFormData] = useState({
+        meno: '',
+        email: '',
+        mobil: '',
+        text: '',
+        dozvedelisa: '',
+        oprojekte: ''
+    });
 
+    //require to have access to formData from withing the submitListener
+    const formDataRef = useRef(formData);
+
+    const handleChange = (e:any) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    useEffect(() => {
+        // Update the formDataRef whenever the formData state changes
+        formDataRef.current = formData;
+    }, [formData]);
 
 
     useEffect(() => {
         const submitListener = () => {
 
-            // Get the values from the input fields
-            const menoElement = document.getElementById("meno") as HTMLInputElement | null;
-            const meno = menoElement?.value ?? '';
-
-            const emailElement = document.getElementById("email") as HTMLInputElement | null;
-            const email = emailElement?.value ?? '';
-
-            const mobilElement = document.getElementById("mobil") as HTMLInputElement | null;
-            const mobil = mobilElement?.value ?? '';
-
-            const textElement = document.getElementById("text") as HTMLInputElement | null;
-            const text = textElement?.value ?? '';
-
-            const dozvedelisaElement = document.getElementById("dozvedelisa") as HTMLInputElement | null;
-            const dozvedelisa = dozvedelisaElement?.value ?? '';
-
-            const oprojekteElement = document.getElementById("oprojekte") as HTMLInputElement | null;
-            const oprojekte = oprojekteElement?.value ?? '';
+            const currentFormData = formDataRef.current;
 
             const body = "Meno : <br/> "
-                + meno
+                + currentFormData.meno
                 + "<br/> ---<br/><br/> Email : <br/> "
-                + email
+                + currentFormData.email
                 + "<br/> ---<br/><br/> Mobil : <br/> "
-                + mobil
+                + currentFormData.mobil
                 + "<br/> ---<br/><br/> Ako Vám môžeme pomôcť : <br/> "
-                + text
+                + currentFormData.text
                 + "<br/> ---<br/><br/> Ako ste sa o nás dozvedeli : <br/> "
-                + dozvedelisa
+                + currentFormData.dozvedelisa
                 + "<br/> ---<br/><br/> O projekte : <br/> "
-                + oprojekte;
+                + currentFormData.oprojekte;
+
+            // Hide activeSubmitButton and show inactiveSubmitButton
+            const activeSubmitButton = document.getElementById("activeSubmitutton");
+            const inactiveSubmitButton = document.getElementById("inactiveSubmitutton");
+
+            if (activeSubmitButton && inactiveSubmitButton) {
+                activeSubmitButton.style.display = "none";
+                inactiveSubmitButton.style.display = "flex";
+            }
 
             // Add a new document with the user-submitted data
             const mailCollection = collection(firestore, 'mail');
             addDoc(mailCollection, {
                 to: emailTo,
-                replyTo: email,
+                from: currentFormData.email,
                 message: {
                     subject: 'Kontakt z appky.sk!',
                     html: body,
                 },
             })
                 .then(() => {
+
+                    // Clear form inputs
+                    setFormData({
+                        meno: '',
+                        email: '',
+                        mobil: '',
+                        text: '',
+                        dozvedelisa: '',
+                        oprojekte: ''
+                    });
+
                     alert('Váš email bol odoslaný. Ďakujeme.');
                     console.log("Data successfully written to Firestore!");
-                    // Optionally, you can display a success message or redirect the user
+
+                    //brind send button back
+                    if (activeSubmitButton && inactiveSubmitButton) {
+                        activeSubmitButton.style.display = "flex";
+                        inactiveSubmitButton.style.display = "none";
+                    }
+
                 })
                 .catch((error: any) => {
                     console.error("Error writing document: ", error);
+
                     // Display an error message to the user
+                    alert('Bohužiaľ nastala chyba pri zasielaní emailu. Prosím napíšte nám na hello@appky.sk');
+
+                    //brind send button back
+                    if (activeSubmitButton && inactiveSubmitButton) {
+                        activeSubmitButton.style.display = "flex";
+                        inactiveSubmitButton.style.display = "none";
+                    }
                 });
         };
 
@@ -571,23 +607,23 @@ function MainPage() {
                             <div className={styles.menoemail}>
                                 <div className={styles.formMeno}>
                                     <label htmlFor="name" className={styles.labelText}>Meno</label>
-                                    <input type="text" id="meno" name="meno" className={styles.borderBox} />
+                                    <input type="text" id="meno" name="meno" className={styles.borderBox} value={formData.meno}  onChange={handleChange} />
                                 </div>
                                 <div className={styles.formEmail}>
                                     <label htmlFor='email' className={styles.labelText}>E-mail</label>
-                                    <input type="text" id="email" name="email" className={styles.borderBox} />
+                                    <input type="text" id="email" name="email" className={styles.borderBox} value={formData.email}  onChange={handleChange} />
                                 </div>
                             </div>
                             <div className={styles.mobilpomoc}>
                                 <div className={styles.menoemail}>
                                     <div className={styles.formMobil}>
                                         <label htmlFor="name" className={styles.labelText}>Mobil (nepovinné)</label>
-                                        <input type="text" id="mobil" name="mobil" className={styles.borderBox} />
+                                        <input type="text" id="mobil" name="mobil" className={styles.borderBox} value={formData.mobil}  onChange={handleChange} />
                                     </div>
                                     <div className={styles.formHelp}>
                                         <label htmlFor='email' className={styles.labelText}>Ako Vám môžeme
                                             pomôcť?</label>
-                                        <input type="text" id="text" name="text" className={styles.borderBox} />
+                                        <input type="text" id="text" name="text" className={styles.borderBox} value={formData.text}  onChange={handleChange} />
                                     </div>
                                 </div>
                             </div>
@@ -596,7 +632,7 @@ function MainPage() {
                                 <div className={styles.formFrom}>
                                     <label htmlFor='email' className={styles.labelText}>Ako ste sa o nás
                                         dozvedeli?</label>
-                                    <input type="text" id="dozvedelisa" name="dozvedelisa" className={styles.borderBox} />
+                                    <input type="text" id="dozvedelisa" name="dozvedelisa" className={styles.borderBox} value={formData.dozvedelisa}  onChange={handleChange} />
                                 </div>
                             </div>
 
@@ -605,11 +641,14 @@ function MainPage() {
                                     <label htmlFor='email' className={styles.labelText}>Povedzte nám o Vašom
                                         projekte!</label>
                                     <input type="text" id="oprojekte" name="oprojekte"
-                                        className={styles.borderBoxLarge} />
+                                        className={styles.borderBoxLarge} value={formData.oprojekte}  onChange={handleChange}/>
                                 </div>
                             </div>
-                            <div className={styles.sendButton}>
+                            <div className={styles.sendButton} id="activeSubmitutton">
                                 <button className={styles.sendButtonStyle} id="submitButton">Odoslať</button>
+                            </div>
+                            <div className={styles.sendButton} id="inactiveSubmitutton" style={{display:'none'}}>
+                                <button className={styles.sendButtonStyle} style={{background:'gray'}}>Odosielam</button>
                             </div>
                         </div>
 
