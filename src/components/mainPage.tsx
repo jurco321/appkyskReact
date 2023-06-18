@@ -124,8 +124,8 @@ function MainPage() {
             // Add a new document with the user-submitted data
             const mailCollection = collection(firestore, 'mail');
             addDoc(mailCollection, {
-                to: currentFormData.email,
-                replyTo: emailTo,
+                to: emailTo,
+                from: currentFormData.email,
                 message: {
                     subject: 'Kontakt z appky.sk!',
                     html: body,
