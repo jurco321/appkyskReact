@@ -112,6 +112,13 @@ function MainPage() {
                 + "<br/> ---<br/><br/> O projekte : <br/> "
                 + currentFormData.oprojekte;
 
+            //check if email is valid
+            const regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            if (!regex.test( currentFormData.email)) {
+                alert('prosím zadajte správny email');
+                return;
+            }
+
             // Hide activeSubmitButton and show inactiveSubmitButton
             const activeSubmitButton = document.getElementById("activeSubmitutton");
             const inactiveSubmitButton = document.getElementById("inactiveSubmitutton");
@@ -611,7 +618,8 @@ function MainPage() {
                                 </div>
                                 <div className={styles.formEmail}>
                                     <label htmlFor='email' className={styles.labelText}>E-mail</label>
-                                    <input type="text" id="email" name="email" className={styles.borderBox} value={formData.email}  onChange={handleChange} />
+                                    <input type="text" id="email" name="email" className={styles.borderBox}
+                                           value={formData.email}  onChange={handleChange} />
                                 </div>
                             </div>
                             <div className={styles.mobilpomoc}>
