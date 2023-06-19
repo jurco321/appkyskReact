@@ -139,9 +139,6 @@
 }
 
 .navBarLinks{
-    position: absolute;
-    top: 16px;
-    right: 16px;
 }
 
 .appkyLogo {
@@ -176,6 +173,7 @@
 
 .navBarItem.navBarItemMobile {
     display: block;
+    margin-top: 30px;
 }
 
 .navBarItem {
