@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import styles from './mainPage.module.css';
-import { collection, addDoc, doc, getDoc } from 'firebase/firestore';
+import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from "../firebase/config";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
@@ -153,7 +153,7 @@ function MainPage() {
                     alert('Váš email bol odoslaný. Ďakujeme.');
                     console.log("Data successfully written to Firestore!");
 
-                    //brind send button back
+                    //bring send button back
                     if (activeSubmitButton && inactiveSubmitButton) {
                         activeSubmitButton.style.display = "flex";
                         inactiveSubmitButton.style.display = "none";
@@ -166,7 +166,7 @@ function MainPage() {
                     // Display an error message to the user
                     alert('Bohužiaľ nastala chyba pri zasielaní emailu. Prosím napíšte nám na hello@appky.sk');
 
-                    //brind send button back
+                    //bring send button back
                     if (activeSubmitButton && inactiveSubmitButton) {
                         activeSubmitButton.style.display = "flex";
                         inactiveSubmitButton.style.display = "none";
@@ -180,6 +180,19 @@ function MainPage() {
         // Clean up the event listener when the component is unmounted
         return () => {
             submitButton?.removeEventListener("click", submitListener);
+        };
+    }, []);
+
+    //this is to close mobile menu if window width changes
+    useEffect(() => {
+        const handleResize = () => {
+            setIsOpen(false);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
@@ -225,8 +238,6 @@ function MainPage() {
                                     spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
                             nás</ScrollLink>
                     </div>
-
-
 
                 </div>
             </div>
