@@ -6,7 +6,7 @@ import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
 function MainPage() {
 
-    const emailTo = "appkysro@gmail.com";
+    const emailTo = "hello@appky.sk";
 
     const [scrolled, setScrolled] = useState(false);
 
