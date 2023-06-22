@@ -26,6 +26,9 @@ function MainPage() {
                 duration: 500,
                 smooth: 'easeInOutQuart',
             });
+
+            //close mobile menu if it is opened
+            setIsOpen(false);
         }
     };
 
@@ -35,6 +38,9 @@ function MainPage() {
                 duration: 500,
                 smooth: 'easeInOutQuart',
             });
+
+            //close mobile menu if it is opened
+            setIsOpen(false);
         }
     };
 
@@ -44,6 +50,9 @@ function MainPage() {
                 duration: 500,
                 smooth: 'easeInOutQuart',
             });
+
+            //close mobile menu if it is opened
+            setIsOpen(false);
         }
     };
 
@@ -53,6 +62,9 @@ function MainPage() {
                 duration: 500,
                 smooth: 'easeInOutQuart',
             });
+
+            //close mobile menu if it is opened
+            setIsOpen(false);
         }
     };
 
