@@ -9,7 +9,7 @@ import DrawerMenu from './drawerMenu';
 
 function MainPage() {
 
-    const emailTo = "appkysro@gmail.com";
+    const emailTo = "hello@appky.sk";
 
     const [scrolled, setScrolled] = useState(false);
 
