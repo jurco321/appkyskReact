@@ -18,10 +18,11 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({
                     handleContactClick, mobileMenu, isOpen}) => {
     return (
         <div className={`${styles.drawerMenu} ${isOpen ? styles.open : ""}`} >
-
-            <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
-                 onClick={mobileMenu} />
-
+            <div className={styles.navBar}>
+                <div className={styles.hamburgerIcon}>
+                    <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
+                         onClick={mobileMenu} />
+                </div>
 
                 <ScrollLink to="sluzby"
                             className={styles.navBarItemMobile} spy={true}
@@ -36,6 +37,9 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({
                             className={styles.navBarItemMobile}
                             spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
                     nás</ScrollLink>
+
+
+            </div>
 
         </div>
     );

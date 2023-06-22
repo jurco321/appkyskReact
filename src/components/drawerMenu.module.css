@@ -13,6 +13,22 @@
     transform: translateX(0);
 }
 
+.menuIcon {
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.navBar {
+
+    justify-content: space-between; /* Places the children at the beginning and end of the container */
+    align-items: center; /* Centers the children vertically */
+}
+
+.hamburgerIcon {
+
+}
+
 .navBarItemMobile {
     display: block;
     margin-top: 30px;

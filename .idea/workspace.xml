@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c2c19c6-945d-4001-8297-3433668c676f" name="Changes" comment="checking email">
-      <change afterPath="$PROJECT_DIR$/src/components/drawerMenu.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/drawerMenu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainPage.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/drawerMenu.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/drawerMenu.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/drawerMenu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/drawerMenu.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +70,7 @@
       <workItem from="1686719836464" duration="1542000" />
       <workItem from="1687112149582" duration="4181000" />
       <workItem from="1687117155286" duration="7404000" />
-      <workItem from="1687465111491" duration="8713000" />
+      <workItem from="1687465111491" duration="10088000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring to react, next part">
       <created>1685881982022</created>
