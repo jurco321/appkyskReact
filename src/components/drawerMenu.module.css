@@ -1,0 +1,32 @@
+.drawerMenu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 300px;
+    background-color: #f0f0f0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(100%);
+}
+
+.drawerMenu.open {
+    transform: translateX(0);
+}
+
+.navBarItemMobile {
+    display: block;
+    margin-top: 30px;
+
+    margin-left: 30px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-weight: 500;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-size: 18px;
+    line-height: 27px;
+    cursor: pointer;
+    position: relative;
+
+    transition: transform 0.1s, background-position 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}

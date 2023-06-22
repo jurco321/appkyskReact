@@ -3,6 +3,9 @@ import styles from './mainPage.module.css';
 import { collection, addDoc } from 'firebase/firestore';
 import { firestore } from "../firebase/config";
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
+import DrawerMenu from './drawerMenu';
+
+
 
 function MainPage() {
 
@@ -16,21 +19,6 @@ function MainPage() {
     const ONasRef = useRef<HTMLDivElement>(null);
     const postupRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
-
-
-    useEffect(() => {
-        const handleScroll = () => {
-            const isScrolled = window.scrollY > 0;
-            setScrolled(isScrolled);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-
-    }, []);
 
     const handleSluzbyClick = () => {
         if (sluzbyRef.current) {
@@ -67,6 +55,20 @@ function MainPage() {
             });
         }
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 0;
+            setScrolled(isScrolled);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+
+    }, []);
 
     const mobileMenu = () => {
         setIsOpen((open) => !open);
@@ -224,14 +226,22 @@ function MainPage() {
                         <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
                              onClick={mobileMenu} />
                         </div>
+
+                        <DrawerMenu handleSluzbyClick={handleSluzbyClick}
+                                    handleONasClick={handleONasClick}
+                                    handlePostupClick={handlePostupClick}
+                                    handleContactClick={handleContactClick}
+                                    mobileMenu={mobileMenu}
+                                    isOpen={isOpen} />
+
                         <ScrollLink to="sluzby"
-                                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
+                                    className={styles.navBarItem} spy={true}
                                     smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
                         <ScrollLink to="onas"
-                                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true} smooth={true}
+                                    className={styles.navBarItem} spy={true} smooth={true}
                                     duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
                         <ScrollLink to="postup"
-                                    className={`${styles.navBarItem} ${isOpen ? styles.navBarItemMobile : ""}`} spy={true}
+                                    className={styles.navBarItem} spy={true}
                                     smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
                         <ScrollLink to="contact"
                                     className={`${styles.navBarItemButton} ${styles.scrolled} ${styles.navContactButton}`}
