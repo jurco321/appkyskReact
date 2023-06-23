@@ -4,8 +4,8 @@
     right: 0;
     height: 100%;
     width: 300px;
-    background-color: #f0f0f0;
-    transition: transform 0.3s ease-in-out;
+    background-color: #0A142F;
+    transition: transform 0.6fires ease-in-out;
     transform: translateX(100%);
 }
 
