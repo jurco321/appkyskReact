@@ -5,29 +5,32 @@
     height: 100%;
     width: 300px;
     background-color: #0A142F;
-    transition: transform 0.6fires ease-in-out;
+    transition: transform 0.6s ease-in-out;
     transform: translateX(100%);
 }
 
 .drawerMenu.open {
     transform: translateX(0);
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
 }
 
 .menuIcon {
     cursor: pointer;
-    margin-left: auto;
-    margin-right: 0;
+    display: flex;
+    margin-left: 230px;
+    padding-top: 30px;
 }
 
 .navBar {
 
-    justify-content: space-between; /* Places the children at the beginning and end of the container */
-    align-items: center; /* Centers the children vertically */
+    justify-content: space-between;
+    /* Places the children at the beginning and end of the container */
+    align-items: center;
+    /* Centers the children vertically */
 }
 
-.hamburgerIcon {
-
-}
+.hamburgerIcon {}
 
 .navBarItemMobile {
     display: block;

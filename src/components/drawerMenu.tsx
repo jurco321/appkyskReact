@@ -20,7 +20,7 @@ const DrawerMenu: React.FC<DrawerMenuProps> = ({
         <div className={`${styles.drawerMenu} ${isOpen ? styles.open : ""}`} >
             <div className={styles.navBar}>
                 <div className={styles.hamburgerIcon}>
-                    <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
+                    <img src='/public/customExitIcon.svg' alt="ExitIcon" className={styles.menuIcon}
                          onClick={mobileMenu} />
                 </div>
 
