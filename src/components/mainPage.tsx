@@ -98,7 +98,7 @@ function MainPage() {
     //require to have access to formData from withing the submitListener
     const formDataRef = useRef(formData);
 
-    const handleChange = (e:any) => {
+    const handleChange = (e: any) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
@@ -128,7 +128,7 @@ function MainPage() {
 
             //check if email is valid
             const regex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
-            if (!regex.test( currentFormData.email)) {
+            if (!regex.test(currentFormData.email)) {
                 alert('prosím zadajte správny email');
                 return;
             }
@@ -234,30 +234,30 @@ function MainPage() {
                     <b className={styles.navBarTitle}>appky</b>
 
                     <div className={styles.navBarLinks}>
-                        <div style={{display: "flex", justifyContent: "flex-end"}}>
-                        <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
-                             onClick={mobileMenu} />
+                        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                            <img src='/public/customMenuIcon.svg' alt="MenuIcon" className={styles.menuIcon}
+                                onClick={mobileMenu} />
                         </div>
 
                         <DrawerMenu handleSluzbyClick={handleSluzbyClick}
-                                    handleONasClick={handleONasClick}
-                                    handlePostupClick={handlePostupClick}
-                                    handleContactClick={handleContactClick}
-                                    mobileMenu={mobileMenu}
-                                    isOpen={isOpen} />
+                            handleONasClick={handleONasClick}
+                            handlePostupClick={handlePostupClick}
+                            handleContactClick={handleContactClick}
+                            mobileMenu={mobileMenu}
+                            isOpen={isOpen} />
 
                         <ScrollLink to="sluzby"
-                                    className={styles.navBarItem} spy={true}
-                                    smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
+                            className={styles.navBarItem} spy={true}
+                            smooth={true} duration={1000} onClick={handleSluzbyClick}>Služby</ScrollLink>
                         <ScrollLink to="onas"
-                                    className={styles.navBarItem} spy={true} smooth={true}
-                                    duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
+                            className={styles.navBarItem} spy={true} smooth={true}
+                            duration={1000} onClick={handleONasClick}>O nás</ScrollLink>
                         <ScrollLink to="postup"
-                                    className={styles.navBarItem} spy={true}
-                                    smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
+                            className={styles.navBarItem} spy={true}
+                            smooth={true} duration={1000} onClick={handlePostupClick}>Postup</ScrollLink>
                         <ScrollLink to="contact"
-                                    className={`${styles.navBarItemButton} ${styles.scrolled} ${styles.navContactButton}`}
-                                    spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
+                            className={`${styles.navBarItemButton} ${styles.scrolled} ${styles.navContactButton}`}
+                            spy={true} smooth={true} duration={1000} onClick={handleContactClick}>Kontaktujte
                             nás</ScrollLink>
                     </div>
 
@@ -301,9 +301,16 @@ function MainPage() {
                             aplikácií
                             prostredníctvom React Native pre systémy Android aj iOS.
                         </p>
-                        <a className={styles.zistiViac}>
+                        <ScrollLink
+                            to="contact"
+                            className={styles.zistiViac}
+                            spy={true}
+                            smooth={true}
+                            duration={1000}
+                            onClick={handleContactClick}
+                        >
                             Zisti viac ›
-                        </a>
+                        </ScrollLink>
                     </div>
                     <div className={styles.weboveApps}>
                         <img src="/public/weboveApps.svg" alt='weboveApps' className={styles.beruska} />
@@ -315,9 +322,16 @@ function MainPage() {
                             sme
                             vyhoveli potrebám vášho podnikania.
                         </p>
-                        <a className={styles.zistiViac}>
+                        <ScrollLink
+                            to="contact"
+                            className={styles.zistiViac}
+                            spy={true}
+                            smooth={true}
+                            duration={1000}
+                            onClick={handleContactClick}
+                        >
                             Zisti viac ›
-                        </a>
+                        </ScrollLink>
                     </div>
                     <div className={styles.uiuxApps}>
                         <img src="public/uiuxApps.svg" alt='uiuxApps' className={styles.beruska} />
@@ -326,9 +340,16 @@ function MainPage() {
                             S veľkou vášňou sa venujeme tvorbe nádherných a praktických používateľských rozhraní, ktoré
                             poskytujú plynulý a intuitívny zážitok.
                         </p>
-                        <a className={styles.zistiViac}>
+                        <ScrollLink
+                            to="contact"
+                            className={styles.zistiViac}
+                            spy={true}
+                            smooth={true}
+                            duration={1000}
+                            onClick={handleContactClick}
+                        >
                             Zisti viac ›
-                        </a>
+                        </ScrollLink>
                     </div>
                 </div>
             </div>
@@ -359,9 +380,16 @@ function MainPage() {
                     prispôsobené Vašim
                     potrebám.
                 </p>
-                <a className={styles.podmeVyvijat}>
+                <ScrollLink
+                    to="contact"
+                    className={styles.podmeVyvijat}
+                    spy={true}
+                    smooth={true}
+                    duration={1000}
+                    onClick={handleContactClick}
+                >
                     Poďme vyvíjať ›
-                </a>
+                </ScrollLink>
             </div>
             <div id="postup" className={`${styles.postup} ${styles.scrollContainer}`} ref={postupRef}>
 
@@ -656,24 +684,24 @@ function MainPage() {
                             <div className={styles.menoemail}>
                                 <div className={styles.formMeno}>
                                     <label htmlFor="name" className={styles.labelText}>Meno</label>
-                                    <input type="text" id="meno" name="meno" className={styles.borderBox} value={formData.meno}  onChange={handleChange} />
+                                    <input type="text" id="meno" name="meno" className={styles.borderBox} value={formData.meno} onChange={handleChange} />
                                 </div>
                                 <div className={styles.formEmail}>
                                     <label htmlFor='email' className={styles.labelText}>E-mail</label>
                                     <input type="text" id="email" name="email" className={styles.borderBox}
-                                           value={formData.email}  onChange={handleChange} />
+                                        value={formData.email} onChange={handleChange} />
                                 </div>
                             </div>
                             <div className={styles.mobilpomoc}>
                                 <div className={styles.menoemail}>
                                     <div className={styles.formMobil}>
                                         <label htmlFor="name" className={styles.labelText}>Mobil (nepovinné)</label>
-                                        <input type="text" id="mobil" name="mobil" className={styles.borderBox} value={formData.mobil}  onChange={handleChange} />
+                                        <input type="text" id="mobil" name="mobil" className={styles.borderBox} value={formData.mobil} onChange={handleChange} />
                                     </div>
                                     <div className={styles.formHelp}>
                                         <label htmlFor='email' className={styles.labelText}>Ako Vám môžeme
                                             pomôcť?</label>
-                                        <input type="text" id="text" name="text" className={styles.borderBox} value={formData.text}  onChange={handleChange} />
+                                        <input type="text" id="text" name="text" className={styles.borderBox} value={formData.text} onChange={handleChange} />
                                     </div>
                                 </div>
                             </div>
@@ -682,7 +710,7 @@ function MainPage() {
                                 <div className={styles.formFrom}>
                                     <label htmlFor='email' className={styles.labelText}>Ako ste sa o nás
                                         dozvedeli?</label>
-                                    <input type="text" id="dozvedelisa" name="dozvedelisa" className={styles.borderBox} value={formData.dozvedelisa}  onChange={handleChange} />
+                                    <input type="text" id="dozvedelisa" name="dozvedelisa" className={styles.borderBox} value={formData.dozvedelisa} onChange={handleChange} />
                                 </div>
                             </div>
 
@@ -691,14 +719,14 @@ function MainPage() {
                                     <label htmlFor='email' className={styles.labelText}>Povedzte nám o Vašom
                                         projekte!</label>
                                     <input type="text" id="oprojekte" name="oprojekte"
-                                        className={styles.borderBoxLarge} value={formData.oprojekte}  onChange={handleChange}/>
+                                        className={styles.borderBoxLarge} value={formData.oprojekte} onChange={handleChange} />
                                 </div>
                             </div>
                             <div className={styles.sendButton} id="activeSubmitutton">
                                 <button className={styles.sendButtonStyle} id="submitButton">Odoslať</button>
                             </div>
-                            <div className={styles.sendButton} id="inactiveSubmitutton" style={{display:'none'}}>
-                                <button className={styles.sendButtonStyle} style={{background:'gray'}}>Odosielam</button>
+                            <div className={styles.sendButton} id="inactiveSubmitutton" style={{ display: 'none' }}>
+                                <button className={styles.sendButtonStyle} style={{ background: 'gray' }}>Odosielam</button>
                             </div>
                         </div>
 
