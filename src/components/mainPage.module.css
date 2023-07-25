@@ -1498,7 +1498,7 @@ input {
     font-family: 'Comfortaa';
     font-style: normal;
     font-size: 18px;
-    line-height: 27px;
+    line-height: 30px;
     margin-right: auto;
     color: #FFFFFF;
 }
@@ -1510,6 +1510,7 @@ input {
 .footerLogoDiv {
     display: flex;
     flex-direction: row;
+    align-content: center;
 }
 
 @media (max-width: 400px) {
