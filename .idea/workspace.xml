@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0c2c19c6-945d-4001-8297-3433668c676f" name="Changes" comment="checking email">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firestore.rules" beforeDir="false" afterPath="$PROJECT_DIR$/firestore.rules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/mainPage.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/mainPage.module.css" afterDir="false" />
-    </list>
+    <list default="true" id="0c2c19c6-945d-4001-8297-3433668c676f" name="Changes" comment="checking email" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +75,7 @@
       <workItem from="1688829704852" duration="307000" />
       <workItem from="1689687116994" duration="1298000" />
       <workItem from="1689783223723" duration="238000" />
-      <workItem from="1690277829878" duration="516000" />
+      <workItem from="1690277829878" duration="548000" />
     </task>
     <task id="LOCAL-00001" summary="refactoring to react, next part">
       <created>1685881982022</created>
